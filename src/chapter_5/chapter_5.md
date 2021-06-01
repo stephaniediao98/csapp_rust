@@ -160,7 +160,7 @@ The declaration uses longs (`i64`) as the default type of the elements.
 Figure 5.4 shows some baic procedures for generating vecotrs, accesing vecot elements, determining the length of a vector, and a few other things. An important feature to not is that _get\_vec\_element_, the vecotr access function, performs bounds checking for every vector reference . This code is similar to the array representations used in many other languages, including Java. Bounds checking reduces the chances of program error, but it can also slow down program execution.
 
 ```rust,no_run
-{{#include ../code/main.rs:1:58}}
+{{#include code/main.rs:1:58}}
 ```
 Figure 5.4
 
@@ -171,7 +171,7 @@ In our presentation, we will proceed through a series of transformations of the 
 ...
 
 ```rust,no_run
-{{#include ../code/main.rs:61:68}}
+{{#include code/main.rs:61:68}}
 ```
 Figure 5.5
 
@@ -184,7 +184,7 @@ Observe that procedure `combine1`, as shown in Figure 5.5, calls function vec_le
 Figure 5.6 shows a modified version called `combine2`. It calls vec_length at the beginning and assigns the result to a local variable length. This transformation has noticable effect on the overfall performance for some data types and operations, and minimal or even none for others. In any case, this transformations is required to eliminate inifficiencies that would become bottlenexks as we attempt further optimizations.
 
 ```rust,no_run
-{{#include ../code/main.rs:70:78}}
+{{#include code/main.rs:70:78}}
 ```
 Figure 5.6
 
@@ -196,7 +196,7 @@ Figure 5.6
 As we have seen, procedure calls can incur overhead and also block most forms of program optimization we can see in the code for combine2 (Figure 5.6) that get\_vec\_element is called on every loop iteration to retrieve the next vector element. This function checks the vector index `i` against the loop bounds with every vector reference, a clear source of inefficiency. Bounds checking might be a useful feature when dealing with arbitrary array accesses, but a simle analysis of the code for `combine2` shows that all references will be valid.
 
 ```rust,no_run
-{{#include ../code/main.rs:80:87}}
+{{#include code/main.rs:80:87}}
 ```
 Figure 5.9
 
@@ -218,7 +218,7 @@ We can eliminate this needless reading and writing of memory by rewriting the co
 We see a signification improvement in the program performance, as will be seen in Section 5.10.
 
 ```rust,no_run
-{{#include ../code/main.rs:89:97}}
+{{#include code/main.rs:89:97}}
 ```
 Figure 5.10
 
@@ -236,7 +236,7 @@ Figure 5.16 shows a version of our combining code using what we will refer to as
 ...
 
 ```rust,no_run
-{{#include ../code/main.rs:100:117}}
+{{#include code/main.rs:100:117}}
 ```
 Figure 5.16
 
@@ -254,7 +254,7 @@ Figure 5.16
 Figure 5.21 shows code that uses this method. It uses both two-way loop unrolling, to combine more elements per iteration, and two-way parallelism, accumulating elements with even indices in verable acc0 and elements with odd indicies in veraible acc1. We therefore refer to this as "2 x 2 loop unroling." Ass before, we include a second loop to accumulate any remaining array elements for the case where teh vector length is not a multiple of 2. We then appply combinding code opeation to acc0 and acc1 to compute the final result.
 
 ```rust,no_run
-{{#include ../code/main.rs:120:140}}
+{{#include code/main.rs:120:140}}
 ```
 Figure 5.21
 
@@ -266,18 +266,18 @@ We now explore another way to break the sequential dependencies and thereby impr
 
 Figure 5.26 shows a function `combine7` that differs from the unrolled code of `combine5` (Figure 5.16) only in the way the elements are combined in the inner loop. In `combine5`, the combining is performed by the statement
 
-{{#include ../code/main.rs:109}}
+{{#include code/main.rs:109}}
 
 while in `combine7`, it is performed by the statement
 
-{{#include ../code/main.rs:152}}
+{{#include code/main.rs:152}}
 
 differing only in how two parentheses are placed. We call this a reassociation transformation, because the parenthesess shif the oder in which the vector elements are combined with the accumulated value acc, yielding a form of loop unrolling we refer to as "2 x 1a."
 
 ... 
 
 ```rust,no_run
-{{#include ../code/main.rs:143:161}}
+{{#include code/main.rs:143:161}}
 ```
 Figure 5.26
 

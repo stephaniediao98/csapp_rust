@@ -24,3 +24,6 @@
     - [Putting it Together: Which I/O Functions Should I Use?]()
 - [Network Programming](chapter_11/chapter_11.md)
 - [Concurrent Programming](chapter_12/chapter_12.md)
+    - [Concurrent Programming with Processes](chapter_12/section_1.md)
+    - [Concurrent Programming with I/O Multiplexing](chapter_12/section_2.md)
+    - [Concurrent Programming with Threads](chapter_12/section_3.md)

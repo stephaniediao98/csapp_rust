@@ -15,7 +15,7 @@
     - [Files](chapter_10/section_2.md)
     - [Opening and Closing Files](chapter_10/section_3.md)
     - [Reading and Writing Files](chapter_10/section_4.md)
-    - [Robust Reading and Writing with the Rio Package]()
+    - [Robust Reading and Writing with the Rio Package (Omitted)]()
     - [Reading File Metadata](chapter_10/section_6.md)
     - [Reading Directory Contents](chapter_10/section_7.md)
     - [Sharing Files]()

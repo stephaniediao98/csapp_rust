@@ -1,6 +1,6 @@
 # Summary
 
-[Introduction](./introduction.md)
+[Introduction](introduction.md)
 - [Draft chapter]()
 - [Representing and Manipulating Information](chapter_2/chapter_2.md)
 - [Draft chapter]()

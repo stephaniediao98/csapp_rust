@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Opening and Closing Files</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="../chapter_2/chapter_2.html"><strong aria-hidden="true">2.</strong> Representing and Manipulating Information</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Draft chapter</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="../chapter_5/chapter_5.html"><strong aria-hidden="true">5.</strong> Optimizing Program Performance</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Draft chapter</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="../chapter_8/chapter_8.html"><strong aria-hidden="true">8.</strong> Exceptional Control Flow</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="../chapter_10/chapter_10.html"><strong aria-hidden="true">10.</strong> System-Level I/O</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_10/section_1.html"><strong aria-hidden="true">10.1.</strong> Unix I/O</a></li><li class="chapter-item expanded "><a href="../chapter_10/section_2.html"><strong aria-hidden="true">10.2.</strong> Files</a></li><li class="chapter-item expanded "><a href="../chapter_10/section_3.html" class="active"><strong aria-hidden="true">10.3.</strong> Opening and Closing Files</a></li><li class="chapter-item expanded "><a href="../chapter_10/section_4.html"><strong aria-hidden="true">10.4.</strong> Reading and Writing Files</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.5.</strong> Robust Reading and Writing with the Rio Package</div></li><li class="chapter-item expanded "><a href="../chapter_10/section_6.html"><strong aria-hidden="true">10.6.</strong> Reading File Metadata</a></li><li class="chapter-item expanded "><a href="../chapter_10/section_7.html"><strong aria-hidden="true">10.7.</strong> Reading Directory Contents</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.8.</strong> Sharing Files</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.9.</strong> I/O Redirection</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.10.</strong> Standard I/O (Omitted)</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.11.</strong> Putting it Together: Which I/O Functions Should I Use?</div></li></ol></li><li class="chapter-item expanded "><a href="../chapter_11/chapter_11.html"><strong aria-hidden="true">11.</strong> Network Programming</a></li><li class="chapter-item expanded "><a href="../chapter_12/chapter_12.html"><strong aria-hidden="true">12.</strong> Concurrent Programming</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="103---opening-and-closing-files"><a class="header" href="#103---opening-and-closing-files">10.3   Opening and Closing Files</a></h1>
+<p>In this section, we discuss how to open and close files using Rust's <a href="https://doc.rust-lang.org/std/">standard library</a>. The Rust standard library contains the <a href="https://doc.rust-lang.org/std/io/index.html"><code>std::io</code></a> and <a href="https://doc.rust-lang.org/std/fs/index.html"><code>std::fs</code></a> modules for performing I/O and manipulating the filesystem, respectively.</p>
+<h2 id="1031---open"><a class="header" href="#1031---open">10.3.1   Open</a></h2>
+<p>The <code>File</code> struct has an <code>open</code> method implemented for it: </p>
+<pre><code class="language-rust ignore">pub fn open&lt;P: AsRef&lt;Path&gt;&gt;(path: P) -&gt; io::Result&lt;File&gt; {
+        OpenOptions::new().read(true).open(path.as_ref())
+    }
+</code></pre>
+<blockquote>
+<p><strong>New to Rust?</strong>
+<a href="https://doc.rust-lang.org/std/path/struct.Path.html"><code>Path</code></a> is a struct from the <a href="https://doc.rust-lang.org/std/path/index.html"><code>std::path</code></a> module that represents a slice of a path. It is similar to the <code>str</code> type. <code>Path</code> is really just a wrapper around <code>OsStr</code>, which is why they work directly on string according to the local platform's (in this case Unix) path syntax. This is an unsized type, which means that it must always be used behind a pointer like <code>&amp;</code> or <code>Box</code>. <code>AsRef</code> is used to perform cheap reference-to-reference conversions. Thus, the <code>&lt;P: AsRef&lt;Path&gt;&gt;</code> code specifies that the path argument must implement this trait. A path implements this trait if it can be converted to reference to <code>Path</code>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Traits</strong> define shared behavior among different types. The Rust compiler interprets traits as some functionality a particular type has and can share with other types. A type has the behavior specified by a trait if that trait is <em>implemented</em> for the type.  This basically means that we can call the functions defined for a trait on all types that have, or implement, that trait. </p>
+</blockquote>
+<p>The <code>File::open</code> function takes a path argument and returns an <code>io::Result&lt;File&gt;</code>, where <a href="https://doc.rust-lang.org/std/io/type.Result.html"><code>std::io::Result</code></a> is the specialized <code>Result</code> type for I/O operations. If <code>File::open</code> is successful, <code>Ok(File)</code> is returned. Otherwise, <a href="https://doc.rust-lang.org/std/io/struct.Error.html"><code>io::Error</code></a> is returned. </p>
+<pre><code class="language-rust ignore">type Result&lt;T&gt; = Result&lt;T, Error&gt;;
+</code></pre>
+<blockquote>
+<p><strong>Why does <code>std::io</code> use an alias of <code>std::result::Result</code>?</strong>
+When a <code>Result</code> type is used, it is generally assumed to be the <a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>std::result::Result</code></a> type. However, the I/O crate has specified an alias for <code>Result</code> that is used for I/O operations. This was done in order to avoid writing out <code>io::Error</code> directly.</p>
+</blockquote>
+<blockquote>
+<p><strong>New to Rust?</strong>
+The <code>Result</code> type is an enum with two variants: <code>Ok(T)</code> and <code>Err(E)</code>. The <code>Ok(T)</code> variant indicates that the operation was successful and returned a value of type <code>T</code>, while the <code>Err(E)</code> variant indicates that the operation was not successful and returned an error value of type <code>E</code>. </p>
+</blockquote>
+<pre><code class="language-rust ignore">enum Result&lt;T, E&gt; {
+   Ok(T),
+   Err(E),
+}
+</code></pre>
+<p>Now, let's put this all together and go through an example. Assume we have a file we want to open, <code>open_me.txt</code> that is in the same directory as <code>main.rs</code>.</p>
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
+
+fn main() {
+    let result = File::open(&quot;open_me.txt&quot;);
+    println!(&quot;The result of the open operation was: {:?}&quot;, result);
+}
+</code></pre></pre>
+<p>Note that if you hit the play button to run the code, you will see a &quot;No such file or directory&quot; error. This happens because the textbook's browser has no idea where to find the file. Running the program in your local directory returns: </p>
+<pre><code>cargo run
+   Compiling chapter_10_code v0.1.0 (../chapter_10_code)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.48s
+     Running `../chapter_10_code/target/debug/chapter_10_code`
+The result of the open operation was: Ok(File { fd: 3, path: &quot;/../chapter_10_code/src/open_me.txt&quot;, read: true, write: false })
+</code></pre>
+<p>We can see that we were able to successfully open <code>open_me.txt</code>. The <code>File</code>'s file descriptor, path, and read and write permissions are returned. </p>
+<h2 id="1032---openoptions"><a class="header" href="#1032---openoptions">10.3.2   OpenOptions</a></h2>
+<p>You may have noticed an <a href="https://doc.rust-lang.org/std/fs/struct.OpenOptions.html"><code>OpenOptions</code></a> struct being initialized in the function body of <code>File::open</code>. This struct encapsulates the options and files that can be used to configure how a file is opened. It also has an <code>open</code> method implemented for it. In fact, if you look back at the <code>File::open</code> code, you can see that <code>File::open</code> opens a file using <code>OpenOptions::open</code>. This is because <code>File::open</code> is actually an alias for <code>OpenOptions::open</code>. </p>
+<pre><code class="language-rust ignore">pub fn open&lt;P: AsRef&lt;Path&gt;&gt;(&amp;self, path: P) -&gt; io::Result&lt;File&gt; {
+        self._open(path.as_ref())
+    }
+</code></pre>
+<p><code>OpenOptions</code> has the same function definition as <code>File::open</code>, and the two can be used interchangeable. However, it is useful to use <code>OpenOptions</code> when you want to specify permissions or flags options for the file. This can be done with the <code>OpenOptions::new</code> method, which creates a blank new set of file options ready for configuration. All options are initially set to <code>false</code>. The permissons and flags options you can set include: </p>
+<ul>
+<li>read - Read permissions. If <code>true</code>, then the file should be read-able.</li>
+<li>write - Write permissions. If <code>true</code>, then the file should be write-able.</li>
+<li>append - Open the file in <em>append mode</em>. Before each <code>write</code> operation, position the file offset at the end of the file, as if with <code>seek</code>. This prevents overwriting previous content. </li>
+<li>truncate - If the file exists, then truncate it to length 0. The file must be opened with write access.</li>
+<li>create - Create a new file or open it if already exists.</li>
+<li>create_new - Creates a new file or fails if it already exists.</li>
+<li>custom_flags - Sets custom flags bits. (System-specific)</li>
+<li>mode - Sets the mode bits that a new file will be created with. The operating system masks out bits with the system's <code>umask</code> to produce the file's final permissons. Each process includes a <code>umask</code> in its context that is set by calling the <code>umask</code> function. When a process calls the <code>OpenOptions::open</code> function with some <code>mode</code> argument and creates a new file, the access permission bits of the new file are set to <code>mode &amp; ~umask</code>. If no <code>mode</code> is set, then the default value <code>0o666</code> is used. (System-specific)</li>
+</ul>
+<p>Just like the <code>std::fs::File</code> struct, <code>std::fs::OpenOptions</code> derives itself from <a href="https://stdrs.dev/nightly/x86_64-unknown-linux-gnu/std/sys/unix/fs/struct.OpenOptions.html"><code>std::sys::unix::fs::OpenOptions</code></a>:</p>
+<pre><code class="language-rust ignore">pub struct OpenOptions {
+    read: bool,
+    write: bool,
+    append: bool,
+    truncate: bool,
+    create: bool,
+    create_new: bool,
+    custom_flags: i32,
+    mode: mode_t,
+}
+</code></pre>
+<p>The <code>custom_flags</code> and <code>mode</code> fields are derived from the <a href="https://docs.rs/libc/0.2.95/libc/"><code>libc</code></a> crate. The symbolic names and permissions for these bits are shown in the table below:</p>
+<br>
+<table><thead><tr><th>Mask</th><th>Permissions</th></tr></thead><tbody>
+<tr><td>S_IRUSR</td><td>User (owner) can read the file</td></tr>
+<tr><td>S_IWUSR</td><td>User (owner) can write the file</td></tr>
+<tr><td>S_IXUSR</td><td>User (owner) can execute the file</td></tr>
+<tr><td>S_IRGRP</td><td>Members of the owner's group can read the file</td></tr>
+<tr><td>S_IWGRP</td><td>Members of the owner's group can write the file</td></tr>
+<tr><td>S_IXGRP</td><td>Members of the owner's group can execute the file</td></tr>
+<tr><td>S_IROTH</td><td>Others (anyone) can read the file</td></tr>
+<tr><td>S_IWOTH</td><td>Others (anyone) can write the file</td></tr>
+<tr><td>S_IXOTH</td><td>Others (anyone) can execute the file</td></tr>
+</tbody></table>
+<br>
+<center><b> Table 10.1: Access permission bits </b></center>
+<br>
+<p>Now, let's try the example from 10.3.1 with <code>OpenOptions::open</code> instead of <code>File::open</code>. This code is in the <code>chapter_10_code/src/section_3/open_options.rs</code> file.</p>
+<pre><code class="language-rust ignore">use std::fs::OpenOptions;
+
+fn main() {
+    let result = OpenOptions::new().read(true).open(&quot;open_me.txt&quot;);
+    println!(&quot;The result of the open operation was: {:?}&quot;, result);
+}
+</code></pre>
+<p>Running the program yields the following result: </p>
+<pre><code>cargo run
+   Compiling chapter_10_code v0.1.0 (../chapter_10_code)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.69s
+     Running `../chapter_10_code/target/debug/chapter_10_code`
+The result of the open operation was: Ok(File { fd: 3, path: &quot;../chapter_10_code/src/open_me.txt&quot;, read: true, write: false })
+</code></pre>
+<p>Great! We can see that both <code>File::open</code> and <code>OpenOptions::open</code> returned the same result. Now, let's consider an example where you want to open a file with both read and write permissions set.</p>
+<pre><code class="language-rust ignore">use std::fs::OpenOptions;
+
+fn main() {
+    let result = OpenOptions::new().read(true).write(true).open(&quot;open_me.txt&quot;);
+    println!(&quot;The result of the open operation was: {:?}&quot;, result);
+}
+</code></pre>
+<pre><code>cargo run
+   Compiling chapter_10_code v0.1.0 (../chapter_10_code)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.66s
+     Running `../chapter_10_code/target/debug/chapter_10_code`
+The result of the open operation was: Ok(File { fd: 3, path: &quot;../chapter_10_code/src/open_me.txt&quot;, read: true, write: true })
+</code></pre>
+<p>We can see that both <code>read</code> and <code>write</code> are set to <code>true</code>, so it worked! Here are a couple exercises for you to try: (You can assume that the file, <code>file.txt</code> is in the same directory as <code>main.rs</code>.)</p>
+<ul>
+<li>How would you open a file with <code>create</code> set? </li>
+<li>How would you open a file with <code>truncate</code> set? </li>
+<li>How would you open a file in a mode where anyone can read the file? </li>
+</ul>
+<p>The solutions to these exercises are below. Click the arrow button to unhide them!</p>
+<details>
+  <summary>Exercise Solutions</summary> 
+<pre><code class="language-rust ignore">  // You will need to add `libc = &quot;0.2&quot;` to `[dependencies]` in your Cargo.toml file.
+  extern crate libc; 
+  use std::fs::OpenOptions;
+  use std::os::unix::fs::OpenOptionsExt;
+
+  fn main() {
+      // Opens the file with `create` set
+      let _create_file = OpenOptions::new().read(true).write(true).create(true).open(&quot;file.txt&quot;);
+
+      // Opens the file with `truncate` set 
+      let _trunc_file = OpenOptions::new().write(true).truncate(true).open(&quot;file.txt&quot;);
+
+      // Opens the file such that anyone can read it
+      let mut options = OpenOptions::new();
+      options.write(true);
+      if cfg!(unix) {
+          options.mode(libc::S_IROTH.into());
+      }
+      let _mode_file = options.open(&quot;file.txt&quot;);
+  }
+</code></pre>
+</details>
+<h2 id="1033---close"><a class="header" href="#1033---close">10.3.3   Close</a></h2>
+<p>Files are automatically closed once they go out of scope.</p>
+<pre><code class="language-rust ignore">fn main() {
+    let file = File::open(&quot;file.txt&quot;); // file is now in scope
+    // do things with the file
+} // file goes out of scope and is automatically closed
+</code></pre>
+<p>Errors that are detected upon closing are ignored because <code>FileDesc</code> implements the <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait, which acts as a destructor on a value once it is no longer needed. In order to handle errors, you must use the method <a href="https://doc.rust-lang.org/std/fs/struct.File.html#method.sync_all"><code>sync_all</code></a>. <code>Sync_all</code> attempts to sync all OS-internal metadata to the filesystem. Dropping a file will ignore errors in synchronizing the in-memory data. Here is an example of how you might use <code>sync_all</code>:</p>
+<pre><code class="language-rust ignore">use std::fs::File;
+use std::io::prelude::*;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    let mut file = File::create(&quot;file.txt&quot;)?;
+    file.write_all(b&quot;Hello, world!&quot;)?;
+    // do some stuff with the file
+    
+    file.sync_all()?;
+    Ok(())
+}
+</code></pre>
+<blockquote>
+<p><strong>New to Rust?</strong>
+The <code>()</code> type is known as the <strong>unit</strong> type in Rust. The unit type has one value, <code>()</code>, and it is used when there is no other meaningful value that can be returned. Functions that do not explictly declare a return type automatically return the unit type. Therefore, the following two function definitions have equivalent return types:</p>
+<pre><code class="language-rust ignore">fn func1() -&gt; () {}
+fn func2() {}
+</code></pre>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../chapter_10/section_2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../chapter_10/section_4.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../chapter_10/section_2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../chapter_10/section_4.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

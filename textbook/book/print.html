@@ -1,0 +1,1702 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="chapter_2/chapter_2.html"><strong aria-hidden="true">2.</strong> Representing and Manipulating Information</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Draft chapter</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="chapter_5/chapter_5.html"><strong aria-hidden="true">5.</strong> Optimizing Program Performance</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Draft chapter</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="chapter_8/chapter_8.html"><strong aria-hidden="true">8.</strong> Exceptional Control Flow</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="chapter_10/chapter_10.html"><strong aria-hidden="true">10.</strong> System-Level I/O</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_10/section_1.html"><strong aria-hidden="true">10.1.</strong> Unix I/O</a></li><li class="chapter-item expanded "><a href="chapter_10/section_2.html"><strong aria-hidden="true">10.2.</strong> Files</a></li><li class="chapter-item expanded "><a href="chapter_10/section_3.html"><strong aria-hidden="true">10.3.</strong> Opening and Closing Files</a></li><li class="chapter-item expanded "><a href="chapter_10/section_4.html"><strong aria-hidden="true">10.4.</strong> Reading and Writing Files</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.5.</strong> Robust Reading and Writing with the Rio Package</div></li><li class="chapter-item expanded "><a href="chapter_10/section_6.html"><strong aria-hidden="true">10.6.</strong> Reading File Metadata</a></li><li class="chapter-item expanded "><a href="chapter_10/section_7.html"><strong aria-hidden="true">10.7.</strong> Reading Directory Contents</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.8.</strong> Sharing Files</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.9.</strong> I/O Redirection</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.10.</strong> Standard I/O (Omitted)</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.11.</strong> Putting it Together: Which I/O Functions Should I Use?</div></li></ol></li><li class="chapter-item expanded "><a href="chapter_11/chapter_11.html"><strong aria-hidden="true">11.</strong> Network Programming</a></li><li class="chapter-item expanded "><a href="chapter_12/chapter_12.html"><strong aria-hidden="true">12.</strong> Concurrent Programming</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2-representing-and-manipulating-information"><a class="header" href="#chapter-2-representing-and-manipulating-information">Chapter 2: Representing and Manipulating Information</a></h1>
+<hr />
+<h3 id="21-information-storage"><a class="header" href="#21-information-storage">2.1 Information Storage</a></h3>
+<h5 id="starting-p-44-last-2-paragraphs"><a class="header" href="#starting-p-44-last-2-paragraphs">(starting p. 44, last 2 paragraphs)</a></h5>
+<p>...</p>
+<p>A third case where byte ordering becomes visible is when programs are written that circumvent the normal type system. In rust, this can be done using generics to allow an object to be references according to a different data type from which it was created. Such coding tricks are strongly discouraged for most application programming, but they can be quite useful and even necessary for system-level programming.</p>
+<p>Figure 2.4 shows rust code that uses casting to access and print the byte representations of different program objects. We use a generic type T that has the Serialize trait to read the bytes of a variable. The serialized value references a sequence of bytes where each byte is considered to be a non-negative integer. The first routine <em>show_bytes</em> is given the value that needs to be serialized. The rust formatting directive <em>{:02x}</em> indicates that an integer should be printed in hexadecimal with at least 2 digits.</p>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">use std::mem::size_of;
+</span>fn show_bytes(val: *mut u8, length: isize) {
+    for i in 0..length {
+        print!(&quot; {:02x}&quot;, unsafe { *(val.offset(i)) });
+    }
+    print!(&quot;\n&quot;);
+}
+
+fn show_int(x: i32) {
+    show_bytes(&amp;x as *const _ as *mut u8, size_of::&lt;i32&gt;() as isize);
+}
+
+fn show_float(x: f32){
+    show_bytes(&amp;x as *const _ as *mut u8, size_of::&lt;f32&gt;() as isize);
+}
+
+fn show_pointer&lt;T&gt;(x: *const T){
+    show_bytes(&amp;x as *const _ as *mut u8, size_of::&lt;* const T&gt;() as isize);
+}
+<span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>Figure 2.4</p>
+<p>Procedures show_int, show_float, and show_pointer demonstrate how to use procedure  show_bytes to print the byte representations of rust program objects of type i32, f32, and *const T, respectively. Observe that they pass show_bytes a reference &amp;x to the argument x, casting to a char pointer. The intermediate cast (&quot;as _&quot;) asks the compiler to the work of figuring out what to cast the type to since you can't cast directly change the type a pointer points to in rust. Ultimately this cast lets the compiler know that the program should consider the pointer to be a sequence of bytes rather than to an object of the original data type. This pointer will then be to the lowest byte address occupied by the object.</p>
+<p>The procedures use the rust size_of function to determine the number of bytes used by the object. In general, the expression size_of::&lt;T&gt;() returns the number of bytes required to store an object of type T. Using sizeof rather than a fixed value is one step toward writing code that is portable across different machine types.</p>
+<p>...</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">use std::mem::size_of;
+</span><span class="boring">fn show_bytes(val: *mut u8, length: isize) {
+</span><span class="boring">    for i in 0..length {
+</span><span class="boring">       print!(&quot; {:02x}&quot;, unsafe { *(val.offset(i)) });
+</span><span class="boring">    }
+</span><span class="boring">    print!(&quot;\n&quot;);
+</span><span class="boring">}
+</span><span class="boring">fn show_int(x: i32) {
+</span><span class="boring">   show_bytes(&amp;x as *const _ as *mut u8, size_of::&lt;i32&gt;() as isize);
+</span><span class="boring">}
+</span><span class="boring">fn show_float(x: f32){
+</span><span class="boring">   show_bytes(&amp;x as *const _ as *mut u8, size_of::&lt;f32&gt;() as isize);
+</span><span class="boring">}
+</span><span class="boring">fn show_pointer&lt;T&gt;(x: *const T){
+</span><span class="boring">   show_bytes(&amp;x as *const _ as *mut u8, size_of::&lt;* const T&gt;() as isize);
+</span><span class="boring">}
+</span>fn main() { 
+    test_show_bytes(100);
+}
+
+fn test_show_bytes(val: i32) {
+    let ival: i32 = val;
+    let fval: f32 = val as f32;
+    let pval: *const i32 =  &amp;val as *const i32;
+    show_int(ival);
+    show_float(fval);
+    show_pointer(pval);
+}
+</code></pre></pre>
+<p>Figure 2.5</p>
+<p>...</p>
+<blockquote>
+<p>New to Rust? -- Formatting printing with print!</p>
+<p>The print! function (along with its cousins <code>println!</code>, <code>eprint!</code>, and <code>eprintln!</code>) provide a way to print information with considerable control over the formatting details. The first argument is a <em>format string</em>, while any remaining arguments are values to be printed. Within the format string, each character sequence enclosed in <code>{...}</code> indicates how to format the next argument. Typical examples include {} which stringifies a value if possible and {:?} which display the values in debugging mode if the type has the Debug trait implemented.</p>
+</blockquote>
+<blockquote>
+<p>New to Rust? -- Pointer creation and dereferencing </p>
+<p>At the lowest level, borrowed references in rust (<code>&amp;</code>) are equivalent to C pointers. So why would the type of x in  show_pointer have to be <code>*const T</code> instead of just using <code>&amp;</code>? This is because rust enforces memory safety at compile time. A result of the memory safety is that a spot in memory can only be owned by one variable at any given time, but it allows a function to borrow ownership of a variable by placing a <code>&amp;</code> in before the variable name. But in order to interpret it as a pointer and not a reference to the variable, you have to cast it to a constant pointer <code>*const T</code> where T is a generic type. You can also cast it to a specific type of pointer if you know the type (that is, if you wanted a pointer to an int, it would be <code>*const i32</code>).</p>
+</blockquote>
+<blockquote>
+<p><strong>Aside</strong> Generating an ASCII Table</p>
+<p>You can display a table showing the ASCII character code by executing the command <code>man ascii</code>,</p>
+</blockquote>
+<p><code>Practice 2.5</code></p>
+<p>Consider the following three calls to <em>show_bytes</em>:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(overflowing_literals)]
+</span><span class="boring">use std::mem::size_of;
+</span><span class="boring">fn show_bytes(val: *mut u8, length: isize) {
+</span><span class="boring">    for i in 0..length {
+</span><span class="boring">       print!(&quot; {:02x}&quot;, unsafe { *(val.offset(i)) });
+</span><span class="boring">    }
+</span><span class="boring">    print!(&quot;\n&quot;);
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span>let val: i32 = 0x87654321;
+let valp = &amp;val as *const _ as *mut u8;
+show_bytes(valp, 1);   /* 1. */
+show_bytes(valp, 2);   /* 2. */
+show_bytes(valp, 3);   /* 3. */
+<span class="boring">}
+</span></code></pre></pre>
+<p>Indicate the values that will be printed by each call on a little-endian machine and on a big-endian machine:</p>
+<ol>
+<li>Little endian: __________      Big endian: __________</li>
+<li>Little endian: __________      Big endian: __________</li>
+<li>Little endian: __________      Big endian: __________</li>
+</ol>
+<hr />
+<p><code>Practice 2.10</code></p>
+<pre><pre class="playground"><code class="language-rust no_run">fn inplace_swap(x: *mut i32, y: *mut i32) {
+	unsafe {
+	    *y = *x ^ *y; /* Step 1 */
+	    *x = *x ^ *y; /* Step 2 */
+	    *y = *x ^ *y; /* Step 3 */
+    }
+}
+<span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>As the name implies, we claim that the effect of this procedure is to swap the values stored at the locations denoted by pointer variables <em>x</em> and <em>y</em>. Note that unlike the usual technique for swapping two values, we do not need a third location to temporarily store one value while we are moving the other. There is no performance advantage to this way of swapping; it is merely an intellectual amusement.</p>
+<p>Starting with values <em>a</em> and <em>b</em> in the locations pointed to by <em>x</em> and <em>y</em>, respectively, fill in the table that follows, giving the values stored at the two locations after each step of the procedure. Use the properties of ^ to show that the desired effect is achieved. Recall that every element is its own additive inverse (that is, <em>a</em> ^ <em>a</em> = 0).</p>
+<table><thead><tr><th>Step</th><th align="center">*x</th><th align="center">*y</th></tr></thead><tbody>
+<tr><td>Initially</td><td align="center">a</td><td align="center">b</td></tr>
+<tr><td>Step 1</td><td align="center">________</td><td align="center">________</td></tr>
+<tr><td>Step 2</td><td align="center">________</td><td align="center">________</td></tr>
+<tr><td>Step 3</td><td align="center">________</td><td align="center">________</td></tr>
+</tbody></table>
+<blockquote>
+<p>New to Rust? Unsafe Rust
+A powerful feature of rust that separates it from other languages is that it enforces memory safety guarantees at compile time. However sometimes in systems programming you need to perform a task that isn't memory safe. That's where the <code>unsafe</code> keyword comes in. Unsafe rust works exactly like normal rust without the guarantee of memory safety. In inplace_swap, we see it's used to dereference and mutate a mutable pointer. </p>
+</blockquote>
+<p><code>Practice 2.11</code>
+Armed with the function <em>inplace_swap</em> from problem 2.10, you decide to write code that will reverse the elements of an array by swapping elements from opposite ends of the array, working toward the middle. You arrive at the following function:</p>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">fn inplace_swap(x: *mut i32, y: *mut i32) {
+</span><span class="boring">	unsafe {
+</span><span class="boring">	    *y = *x ^ *y; /* Step 1 */
+</span><span class="boring">	    *x = *x ^ *y; /* Step 2 */
+</span><span class="boring">	    *y = *x ^ *y; /* Step 3 */
+</span><span class="boring">   }
+</span><span class="boring">}
+</span>fn reverse_array(a: &amp;mut Vec&lt;i32&gt;, cnt: usize) {
+	let mut last = cnt-1;
+    for first in 0..=cnt/2 {
+        inplace_swap(&amp;mut a[first], &amp;mut a[last]);
+        last -= 1
+    }
+}
+<span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>When you apply the function to an array containing elements 1, 2, 3, and 4, you find the array now has, as expected, elements 4, 3, 2, and 1. When you try it on an array with elements 1, 2, 3, 4, and 5, however you are surprised to see that the array now has elements 5, 4, 0, 2, and 1. In fact, you discover that the code always works correctly on arrays of  even length, but it sets the middle element  to 0 whenever the array has odd length.</p>
+<ol>
+<li>For an array of odd length <em>cnt = 2k + 1</em>, what are the values of variables <em>first</em> and <em>last</em> in the final iteration of function <em>reverse_array</em>?</li>
+<li>Why does this call to function <em>inplace_swap</em> set the array element to 0?</li>
+<li>What simple modification to the code for <em>reverse_array</em> would eliminate this problem? </li>
+</ol>
+<hr />
+<h3 id="22-integer-representations"><a class="header" href="#22-integer-representations">2.2 Integer Representations</a></h3>
+<p>Rust supports a variety of <em>integral</em> data types---ones that represent finite ranges of integers. These are shown in Figure 2.9, along with the ranges of values the can have for &quot;typical&quot; 64-bit programs. Each type can specify a size with a number telling how many bytes they type has as well as an indication of whether the represented numbers are all non-negative (declared as <code>u</code>), or possibly negative (<code>i</code>). </p>
+<table><thead><tr><th>Rust data type</th><th align="right">Minimum</th><th align="right">Maximum</th></tr></thead><tbody>
+<tr><td>i8</td><td align="right">-128</td><td align="right">127</td></tr>
+<tr><td>u8</td><td align="right">0</td><td align="right">255</td></tr>
+<tr><td>i16</td><td align="right">-32,768</td><td align="right">32,767</td></tr>
+<tr><td>u16</td><td align="right">0</td><td align="right">65,535</td></tr>
+<tr><td>i32</td><td align="right">-2,147,483,648</td><td align="right">2,147,483,647</td></tr>
+<tr><td>u32</td><td align="right">0</td><td align="right">4,294,967,295</td></tr>
+<tr><td>i64</td><td align="right">-9,223,372,036,854,775,808</td><td align="right">9,223,372,036,854,775,807</td></tr>
+<tr><td>u64</td><td align="right">0</td><td align="right">18,446,744,073,709,551,615</td></tr>
+</tbody></table>
+<p>Figure 2.9 Typical ranges for Rust integral data types for 64-bit programs</p>
+<hr />
+<p>2.2.5 <strong>Signed versus Unsigned in Rust</strong></p>
+<p>As indicated in Figure 2.9, Rust supports both signed and unsigned arithmetic for all of its integer data types. Generally, most numbers are signed by default. For example, when declaring a constant such as 12345 or 0x1A2B, the value is considered signed. Adding an '_u#' as a suffix creates an unsigned constant.; for example, 12345_u32 or 0x1A2B_u32.</p>
+<p>Rust allows covertion between unsigned and signed. Although rust does not specify how this conversion should be made, most systems follow the rule that the underlying bit representation does not change. This rule has the effect  of applying the function <em>U2T<sub>w<sub></em> when converting from unsigned to signed, and <em>T2U<sub>w<sub></em> when converting from signed to unsigned, where w is the number of its for the data type.</p>
+<p>Conversions can only happen due to explicit casting, such as in the following code:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
+</span>let tx;
+let ty = 0x5678;
+let ux = 0x1234_u32;
+let uy: u32;
+
+tx = ux as i32;
+uy = ty as u32;
+println!(&quot;tx: 0x{:x}, uy: 0x{:x}&quot;, &amp;tx, &amp;uy);
+<span class="boring">}
+</span></code></pre></pre>
+<p>Other languages, such as C, allow you to implicitly cast from signed to unsigned simply by setting the value equal to a value with a different type.</p>
+<hr />
+<p>2.2.6 <strong>Expanding the Bit Representation of a Number</strong></p>
+<p>One common operation is to convert between integers having different word sizes while retaining the same numeric value. Of course, this may not be possible when the destination data type is too small to represent the desired value. Converting from a smaller to a larger data type, however should always be possible.</p>
+<!-- To convert an unsigned number to a larger data type, we can simply add leading zeros to the representation; this operation is known as *zero extens -->
+<p>...</p>
+<p>As an example, consider the following code:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(overflowing_literals)]
+</span><span class="boring">use std::mem::size_of;
+</span><span class="boring">fn show_bytes(val: *mut u8, length: isize) {
+</span><span class="boring">    for i in 0..length {
+</span><span class="boring">       print!(&quot; {:02x}&quot;, unsafe { *(val.offset(i)) });
+</span><span class="boring">    }
+</span><span class="boring">    print!(&quot;\n&quot;);
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span>let sx = -12345_i16;
+let usx = sx as u16;
+let x = sx as i32;
+let ux = usx as u32;
+print!(&quot;sx = {}:&quot;, &amp;sx);
+show_bytes(&amp;sx as *const _ as *mut u8, size_of::&lt;i16&gt;() as isize);
+print!(&quot;usx = {}:&quot;, &amp;usx);
+show_bytes(&amp;usx as *const _ as *mut u8, size_of::&lt;u16&gt;() as isize);
+print!(&quot;x = {}:&quot;, &amp;x);
+show_bytes(&amp;x as *const _ as *mut u8, size_of::&lt;i32&gt;() as isize);
+print!(&quot;ux = {}:&quot;, &amp;ux);
+show_bytes(&amp;ux as *const _ as *mut u8, size_of::&lt;u32&gt;() as isize);
+<span class="boring">}
+</span></code></pre></pre>
+<hr />
+<h3 id="23-integer-arithmeticunchanged"><a class="header" href="#23-integer-arithmeticunchanged">2.3 Integer Arithmetic(unchanged)</a></h3>
+<hr />
+<h3 id="24-floating-point-unchanged"><a class="header" href="#24-floating-point-unchanged">2.4 Floating Point (unchanged)</a></h3>
+<hr />
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="chapter-5-optimizing-program-performance"><a class="header" href="#chapter-5-optimizing-program-performance">Chapter 5: Optimizing Program Performance</a></h1>
+<hr />
+<h3 id="51-capabilities-and-limitations-of-optimizing-compilers"><a class="header" href="#51-capabilities-and-limitations-of-optimizing-compilers">5.1 Capabilities and Limitations of Optimizing Compilers</a></h3>
+<p>...</p>
+<p>Compilers must be carefult to apply only <em>safe</em> optimizations to a program, meaning that the resulting program will have the exacts same behavior as would an unoptimized version for all possible cases the program may encounter, up to the limits of the guarantees by the rust language. Constraining the compiler to perform only safe optimizations eliminates possible sources of undesired run-time behavior, but it also means that the programmer must make more of an effort to write programs in a way that the compiler can then transform into efficient machine-level code. To appreciate the challenges of deciding which program transformations are safe or not, consider the following two procedures:</p>
+<pre><pre class="playground"><code class="language-rust no_run">fn twiddle1(xp: *mut i64, yp: *mut i64) {
+    unsafe {
+        *xp += *yp;
+        *xp += *yp;
+    }
+}
+
+fn twiddle2(xp: *mut i64, yp: *mut i64) {
+    unsafe {
+        *xp += 2* *yp;
+    }
+}
+<span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>At first glance, both procedures seem to have identical behavior. They both addd the value stored at the location designated by pointer yp to that designated by pointer xp. On the other hand, function witddle2 is more efficient. It requires only three memory references (read *xp, read *yp, write *xp), whereas twiddle1 requires six (two reads of *xp, two reads of *yp, and two writes of *xp). Hence, if the compiler is given procedure twiddle1 to compile, one might think it could generate more efficient code based on the computations performed by twiddle2.</p>
+<p>Consider, however, the case in which xp and yp are equal. Then function twiddle1 will perform the following computations:</p>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">fn twiddle1(xp: *mut i64, yp: *mut i64) {
+</span><span class="boring">   unsafe {
+</span>*xp += *yp;
+*xp += *yp;
+<span class="boring">  }
+</span><span class="boring">}
+</span><span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>The result will be that the value at xp will be increased by a factor of 4. On the other hand, function twiddle2 will perform the following computation.:</p>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">fn twiddle2(xp: *mut i64, yp: *mut i64) {
+</span><span class="boring">   unsafe {
+</span> *xp += 2* *yp;
+<span class="boring">  }
+</span><span class="boring">}
+</span><span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>The result will be that hte value at xp will be increased by a factor of 3. The compiler knows nothing about how twiddle1 will be called, and so it must assume that the arguments of xxp and yp can ve equal. It therefor cannot generagte code in the styple of twiddle2 as an optimized version of twiddle1.</p>
+<p>The case where two pointers may designate the same memory location is know as <em>memory aliasing</em>. In rust, memory aliasing is mostly considered unsafe since it allows multiple variables to own a place in memory. In performing only safe optimizations, the compiler must assume that different pointers may be aliased. As another example , for a program with pointer variables p and q, consider the following code sequence:</p>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">fn main() {
+</span>let x = 1000;
+let y = 3000;
+<span class="boring">let mut t1 = 0;
+</span><span class="boring">let q: *mut i32 = &amp;mut t1;
+</span><span class="boring">let p: *mut i32 = &amp;mut t1;
+</span><span class="boring">unsafe{
+</span>*q = y;   /* 3000 */
+*p = x;   /* 1000 */
+t1 = *q;  /* 1000 or 3000 */
+<span class="boring">};
+</span><span class="boring">}
+</span></code></pre></pre>
+<p>The value computed for t1 depends on whether or not pointers p and q are aliased --- if not, it will equal 3,000, but if so it will equal 1,000. This leads to one of the major <em>optimization blockers</em>, aspects of programs that can severly limit the opportunities for a compiler to generate optimized code. If a compiler cannot determin wheter or not two pointers may be aliased, it must assume that either case is possible, limiting the set of possible optimizations.</p>
+<p><code>Practice 5.1</code>
+The following problem illustrates the way memoyr aliasing can cause unexpectede program behavior. Consider the following procedure to swap two values:</p>
+<pre><pre class="playground"><code class="language-rust no_run">fn swap(xp: *mut i64, yp: *mut i64) {
+    unsafe {
+        *xp = *xp + *yp;
+        *yp = *xp - *yp;
+        *xp = *xp - *yp;
+    }
+}
+<span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>If this procedure is called with xp equal to yp, wat effect will it have?</p>
+<p>...</p>
+<p>A second optimization blocker is due to function calls. As an example, consider the following two procedures:</p>
+<pre><pre class="playground"><code class="language-rust no_run">fn f() -&gt; i64{ todo!() }
+fn func1() -&gt; i64 {
+    f() + f() + f() + f()
+}
+
+fn func2() -&gt; i64 {
+    4*f()
+}
+<span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>It might seem at first that both compute the same result but with func2, calling f only once, whereas func1 calls it four times. It is tempting to generate code in the styple of func2 when given func1 as the source.</p>
+<p>Consider, however, the following code for f:</p>
+<pre><pre class="playground"><code class="language-rust no_run">static mut COUNTER: i32 = 0;
+<span class="boring">fn main() {
+</span>fn f() -&gt; i64 {
+<span class="boring">       unsafe {
+</span>	let count = COUNTER.into();
+	COUNTER += 1;
+	count.into()
+<span class="boring">       }
+</span>}
+<span class="boring">}
+</span></code></pre></pre>
+<p>This function has a <em>side effect</em> --- it modifies some part of of the global program state. Changing the number of times it gets called changes the program behavior. In particular, a call to func1 would return 0 + 1 + 2 + 3 = 6, whereas the call to func2 would return 4 * 0 = 0, assuming both started with global variable counter set to zero.</p>
+<p>Most compilers do not try to determine whether a function is free of side effects and hence is a candidate for optimizations such as those attempted in func2. Instead, the compiler assumes  the worse case and leaves function calls intact.</p>
+<hr />
+<h3 id="52-expressing-program-performance"><a class="header" href="#52-expressing-program-performance">5.2 Expressing Program Performance</a></h3>
+<p>...</p>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">fn main() {}
+</span>fn psum1(a: Vec&lt;f32&gt;, p: &amp;mut Vec&lt;f32&gt;, n: usize) {
+    p[0] = a[0];
+    for i in 1..n {
+        p[i] = p[i-1] + a[i];
+    }
+}
+
+fn psum2(a: Vec&lt;f32&gt;, p: &amp;mut Vec&lt;f32&gt;, n: usize) {
+    p[0] = a[0];
+    for i in (1..n-1).step_by(2) {
+        let mid_val: f32 = p[i-1] + a[i];
+        p[i] = mid_val;
+        p[i+1] = mid_val + a[i+1];
+    }
+    if n % 2 == 0 {
+        p[n-1] = p[n-2] + a[n-1];
+    }
+}
+</code></pre></pre>
+<p><code>Figure 5.1</code></p>
+<p>...</p>
+<hr />
+<h3 id="53-program-example"><a class="header" href="#53-program-example">5.3 Program Example</a></h3>
+<p>To demonstrate how an abstract program can be systematically transformed into more efficient code, we will use a running example bacsed on the vector data structure shown in figure 5.3. A vector is represneted with two blocks of memory: the header and the data array. The header is a structure declared as follows:</p>
+<p>The declaration uses longs (<code>i64</code>) as the default type of the elements.</p>
+<p>Figure 5.4 shows some baic procedures for generating vecotrs, accesing vecot elements, determining the length of a vector, and a few other things. An important feature to not is that <em>get_vec_element</em>, the vecotr access function, performs bounds checking for every vector reference . This code is similar to the array representations used in many other languages, including Java. Bounds checking reduces the chances of program error, but it can also slow down program execution.</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:1:58}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.4</p>
+<p>As an optimization example, consider the code shown in Figure 5.5, which combines all of the elements in a vector into a single value according to some operation.</p>
+<p>In our presentation, we will proceed through a series of transformations of the code, writing different versions of the combining function. </p>
+<p>...</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:61:68}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.5</p>
+<hr />
+<h3 id="54-eliminating-loop-inefficiencies"><a class="header" href="#54-eliminating-loop-inefficiencies">5.4 Eliminating Loop Inefficiencies</a></h3>
+<p>Observe that procedure <code>combine1</code>, as shown in Figure 5.5, calls function vec_length as teh test condition of the for loop. Recall from our discussion of how to translate code containing loops into machine-level programs (Section 3.6.7) that the test condition must be evaluated on every iteration of the loop. On the other hand, the length of the vector does not change as teh loop proceeds. We could therefore compute the vector length only one an duse this value inour test condition.</p>
+<p>Figure 5.6 shows a modified version called <code>combine2</code>. It calls vec_length at the beginning and assigns the result to a local variable length. This transformation has noticable effect on the overfall performance for some data types and operations, and minimal or even none for others. In any case, this transformations is required to eliminate inifficiencies that would become bottlenexks as we attempt further optimizations.</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:70:78}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.6</p>
+<p>...</p>
+<hr />
+<h3 id="55-reducing-procedure-calls"><a class="header" href="#55-reducing-procedure-calls">5.5 Reducing Procedure Calls</a></h3>
+<p>As we have seen, procedure calls can incur overhead and also block most forms of program optimization we can see in the code for combine2 (Figure 5.6) that get_vec_element is called on every loop iteration to retrieve the next vector element. This function checks the vector index <code>i</code> against the loop bounds with every vector reference, a clear source of inefficiency. Bounds checking might be a useful feature when dealing with arbitrary array accesses, but a simle analysis of the code for <code>combine2</code> shows that all references will be valid.</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:80:87}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.9</p>
+<p>Suppose instead that we use the fucntion get_vec_start (Figure 5.4) to our abstract data type. This function returns the starting address of the data array, as showin in Figure 5.9. We could then write the procedure shown as combine3 in this ficugrfe, having no function calls in the inner loop. Rather than making a function call to retrieve each vector element, it accessses the array directl. A purist might stay that this transformation seriously impairs the program modularity. In principle, the user of the vector abstract data type should not even need to know that the vector contents are stored as an array, rather than as some other data structure such as a linked list. A more pragmatic programmer would argue that this transformation is a necessary step towrad achieveing high-performance results.</p>
+<p>...</p>
+<hr />
+<h3 id="56-eliminating-unneeded-memory-references"><a class="header" href="#56-eliminating-unneeded-memory-references">5.6 Eliminating Unneeded Memory References</a></h3>
+<p>The code for <code>combine3</code> accumulates the value being computed by the combining operation at the location designated by the pointer <code>dest</code>. This attribute can be seen by examining the assembly code generated by the inner loop of the combiled code</p>
+<p>...</p>
+<p>We can eliminate this needless reading and writing of memory by rewriting the code in the style of <code>combine4</code> inf Figure 5.10. We introduce a temporary value acc that is sued in the loop to accumulate the computed values. The result is stored at dest only after the loop has been completed.</p>
+<p>...</p>
+<p>We see a signification improvement in the program performance, as will be seen in Section 5.10.</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:89:97}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.10</p>
+<p>...</p>
+<hr />
+<h3 id="57-understanding-modern-processors-unchanged"><a class="header" href="#57-understanding-modern-processors-unchanged">5.7 Understanding Modern Processors (unchanged)</a></h3>
+<hr />
+<h3 id="58-loop-unrolling"><a class="header" href="#58-loop-unrolling">5.8 Loop Unrolling</a></h3>
+<p>Loop unrolling is a program transformation that reduced the number of iterations for a loop by increasing the number of elements computed on each iteration. We saw an example of this with the function <code>psum2</code> (figure 5.1), where each iteration computes two elements of the prefix sum, thereby halving the total number of iterations required. Loop unrolling can improve performance in two ways. First, it reduces the numbr of operations that do not contribute directly to the program result, such as loop indexing and conditional branching. Second, it exposes ways in whiich we can further transform the code to reduce the number of operations in the critical paths of the overall computation. In this section, we will examine simple loop unrolling, without any further transformations.</p>
+<p>Figure 5.16 shows a version of our combining code using what we will refer to as &quot;2 x 1 loop unrolling.&quot; This frist loop steps through the array of two elements at a time. That is, the loop index <code>i</code> is incremented by 2 on each iteration, and the combining operation is applied to array elements <code>i</code> and <code>i + 1</code> in a single iteration.</p>
+<p>...</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:100:117}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.16</p>
+<p>...</p>
+<hr />
+<h3 id="59-enchancing-parallelism"><a class="header" href="#59-enchancing-parallelism">5.9 Enchancing Parallelism</a></h3>
+<p>...</p>
+<h4 id="591-multiple-accumulators"><a class="header" href="#591-multiple-accumulators">5.9.1 Multiple Accumulators</a></h4>
+<p>...</p>
+<p>Figure 5.21 shows code that uses this method. It uses both two-way loop unrolling, to combine more elements per iteration, and two-way parallelism, accumulating elements with even indices in verable acc0 and elements with odd indicies in veraible acc1. We therefore refer to this as &quot;2 x 2 loop unroling.&quot; Ass before, we include a second loop to accumulate any remaining array elements for the case where teh vector length is not a multiple of 2. We then appply combinding code opeation to acc0 and acc1 to compute the final result.</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:120:140}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.21</p>
+<p>...</p>
+<h4 id="592"><a class="header" href="#592">5.9.2</a></h4>
+<p>We now explore another way to break the sequential dependencies and thereby improve performance beyond the latency bound. We saw that the <code>k x 1</code> loop unrolling of <code>combine5</code> did not change the set of operations performed in combining the vector elements to form their sum or producet. By a very small change in the code, however, we can fundamentally change the way the combining is performed, and also greatly increase the performance. </p>
+<p>Figure 5.26 shows a function <code>combine7</code> that differs from the unrolled code of <code>combine5</code> (Figure 5.16) only in the way the elements are combined in the inner loop. In <code>combine5</code>, the combining is performed by the statement</p>
+<p>{{#include ../code/main.rs:109}}</p>
+<p>while in <code>combine7</code>, it is performed by the statement</p>
+<p>{{#include ../code/main.rs:152}}</p>
+<p>differing only in how two parentheses are placed. We call this a reassociation transformation, because the parenthesess shif the oder in which the vector elements are combined with the accumulated value acc, yielding a form of loop unrolling we refer to as &quot;2 x 1a.&quot;</p>
+<p>... </p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:143:161}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.26</p>
+<hr />
+<h3 id="510-summary-of-results-for-optimizing-combining-code-unchanged"><a class="header" href="#510-summary-of-results-for-optimizing-combining-code-unchanged">5.10 Summary of Results for Optimizing Combining Code (unchanged)</a></h3>
+<p>...</p>
+<h2 id="rust-results-summary"><a class="header" href="#rust-results-summary">Rust results summary</a></h2>
+<p>We'd expect the 7 combine functions to get faster and faster with the exception of <code>combine7</code> which we expect to have similar performance to <code>combine5</code>. As we will see, however, this isn't exactly the case. We ran 2 sets of benchmarks on all 7 functions. The first set ran without taking advantage of rust's optimizaitions while the second ran with opt-level = 3. Here, we will take a look at all of these and discuss possibilities as to why some of the results are inconsistent with what we might expect.</p>
+<p>Each benchmark creates a vector of size 10,000 where each element, <code>i</code> holds the value <code>i * i</code>. Then it calls one of the combine functions to determine the sum of the vector.</p>
+<h4 id="unoptimized"><a class="header" href="#unoptimized">Unoptimized:</a></h4>
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+<p>Here, two of the combine functions are not what would've been expected: <code>combine4</code> and <code>combine6</code>. We'd expect <code>combine4</code> to be faster than <code>combine3</code>, and we'd expect <code>combine6</code> to be the fastest function. The three main culprits of these discrepencies are the difference in languages, machine architecture, and compilers.</p>
+<p>These functions were originally written for optimizing C code, and rust being designed with a different purpose in mind, their compilation processes follow a different set of rules that allow for different binaries that GCC or another C compiler wouldn't give.</p>
+<p>For <code>combine6</code>, there's a chance the loop unrolling couldn've slown down execution because of different compilers or different architecture. These were originally run on an Intel Core i7 Haswell processor when benchmarked in C. With rust, they were run on an AMD Ryzen 7 processor. Including the reseach done suggesting that loop unrolling in AMD processors perform worse than on Intel processors, the cache size to data size ratio may also have played a factor.</p>
+<p>It is worth noting that rust does provide the attribute-like macro <code>unroll_for_loops</code> in the unroll crate to allow the rust compiler to handling the unrolling as it sees fit. Speedups when using this crate can match the optimized version of <code>combine4</code>.</p>
+<blockquote>
+<p>combine1          time:   [176.00 us <r>176.69 us</r> 177.53 us]<br />
+combine2          time:   [173.54 us <r>175.12 us</r> 176.90 us]<br />
+combine3          time:   [158.76 us <r>164.99 us</r> 170.80 us]<br />
+combine4          time:   [168.36 us <r>173.15 us</r> 178.22 us]<br />
+combine5          time:   [24.625 us <r>24.635 us</r> 24.647 us]<br />
+combine6          time:   [26.494 us <r>26.502 us</r> 26.511 us]<br />
+combine7          time:   [25.117 us <r>25.126 us</r> 25.137 us]</p>
+</blockquote>
+<h4 id="optimized"><a class="header" href="#optimized">Optimized:</a></h4>
+<p>Running the benchmarker with the optimizing function, the only odd function is <code>combine4</code> which is orders of magnitude faster than all of the other functions. This has to do with how rust compiles this code. For whatever reason, the rust compiler deemed it a good idea to take advantage of XMM registers which are a kind of 128 bit register that can be used to perform simultaneous operations on 2 longs. Looking at the difference between <code>combine3</code> and <code>combine4</code>, the change that most likely allowed this optimization to be able to take place is the lack of needing to dereference an accumulator before adding to it. Since accumulation is happening sequentially and within a local variable, rustc (the rust compiler), was smart enough to figure out that it could use these XMM registers.</p>
+<blockquote>
+<p>combine1                time:   [4.7249 us <r>4.7416 us</r> 4.7762 us]<br />
+combine2                time:   [4.7097 us <r>4.7107 us</r> 4.7119 us]<br />
+combine3                time:   [2.4628 us <r>2.4646 us</r> 2.4670 us]<br />
+combine4                time:   [663.91 ns <r>664.95 ns</r> 666.52 ns]<br />
+combine5                time:   [2.3855 us <r>2.3861 us</r> 2.3867 us]<br />
+combine6                time:   [1.6023 us <r>1.6033 us</r> 1.6047 us]<br />
+combine7                time:   [2.3611 us <r>2.3624 us</r> 2.3642 us]</p>
+</blockquote>
+<hr />
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="chapter-8-exceptional-control-flow"><a class="header" href="#chapter-8-exceptional-control-flow">Chapter 8: Exceptional Control Flow</a></h1>
+<h2 id="exceptions"><a class="header" href="#exceptions">Exceptions</a></h2>
+<h3 id="exception-handling"><a class="header" href="#exception-handling">Exception Handling</a></h3>
+<h3 id="classes-of-exceptions"><a class="header" href="#classes-of-exceptions">Classes of Exceptions</a></h3>
+<h4 id="interrupts"><a class="header" href="#interrupts">Interrupts</a></h4>
+<h4 id="traps-and-system-calls"><a class="header" href="#traps-and-system-calls">Traps and System Calls</a></h4>
+<h4 id="faults"><a class="header" href="#faults">Faults</a></h4>
+<h4 id="aborts"><a class="header" href="#aborts">Aborts</a></h4>
+<h3 id="exceptions-in-linuxx86-64-systems"><a class="header" href="#exceptions-in-linuxx86-64-systems">Exceptions in Linux/x86-64 Systems</a></h3>
+<h4 id="linuxx86-64-faults-and-aborts"><a class="header" href="#linuxx86-64-faults-and-aborts">Linux/x86-64 Faults and Aborts</a></h4>
+<h4 id="linuxx86-64-system-calls"><a class="header" href="#linuxx86-64-system-calls">Linux/x86-64 System Calls</a></h4>
+<p>Linux provides hundreds of system calls that application programs use when they want to request services from the kernel, such as reading a file, writing a file, and creating a new process. Some of the popular Unix system calls are below:</p>
+<table><thead><tr><th>Number</th><th>Name</th><th>Description</th></tr></thead><tbody>
+<tr><td>0</td><td><code>read</code></td><td>Read file</td></tr>
+<tr><td>1</td><td><code>write</code></td><td>Write file</td></tr>
+<tr><td>2</td><td><code>open</code></td><td>Open file</td></tr>
+<tr><td>3</td><td><code>close</code></td><td>Close file</td></tr>
+<tr><td>4</td><td><code>stat</code></td><td>Get info about file</td></tr>
+<tr><td>9</td><td><code>mmap</code></td><td>Map memory page to file</td></tr>
+<tr><td>12</td><td><code>brk</code></td><td>Reset the top of the heap</td></tr>
+<tr><td>32</td><td><code>dup2</code></td><td>Copy file descriptor</td></tr>
+<tr><td>33</td><td><code>pause</code></td><td>Suspend process until signal arrives</td></tr>
+<tr><td>37</td><td><code>alarm</code></td><td>Schedule delivery of alarm signal</td></tr>
+<tr><td>39</td><td><code>getpid</code></td><td>Get process ID</td></tr>
+<tr><td>57</td><td><code>fork</code></td><td>Create process</td></tr>
+<tr><td>59</td><td><code>execve</code></td><td>Execute a program</td></tr>
+<tr><td>60</td><td><code>_exit</code></td><td>Terminate process</td></tr>
+<tr><td>61</td><td><code>wait4</code></td><td>Wait for a process to terminate</td></tr>
+<tr><td>62</td><td><code>kill</code></td><td>Send signal to a process</td></tr>
+</tbody></table>
+<p>Notice that each system call has a unique integer number: this number corresponds to an <em>offset</em> in a jump table in the kernel so that the processor can quickly and easily jump to the code that carries out each system call. (This jump table is not the same as the exception table.)</p>
+<p>Executing system calls in Rust is generally done via the standard library and crates. Rust's I/O APIs provide abstractions over top of system calls that give access to files, processes, networking, and more. Crates can fill in the gaps for system features that Rust does not (or does not yet) have API bindings for.</p>
+<p>But how do crates crate new system calls if they, too, are written entirely in Rust? The answer lies in a particularly low-level (and dangerous!) macro: <code>asm!</code>.</p>
+<p>System calls in Rust must be executed wholly in assembly. The Rust implementation for mixing assembly with Rust code remains unstable and generally inadvisable for production use. As an example of how this might look is as follows:</p>
+<pre><code class="language-rust ignore">#![feature(asm)]
+
+fn main() {
+  unsafe {
+    let uid = get_user_id();
+
+    println!(&quot;User ID: {}&quot;, uid);
+  }
+}
+
+unsafe fn get_user_id() -&gt; u64 {
+  let answer: u64;
+  asm!(
+    &quot;mov rax, 0x6b&quot;,
+    &quot;syscall&quot;,
+    &quot;mov {answer}, rax&quot;,
+    answer = out(reg) answer,
+    lateout(&quot;rax&quot;) _,
+    lateout(&quot;r11&quot;) _,
+    lateout(&quot;rcx&quot;) _
+  );
+  answer
+}
+</code></pre>
+<p>Note that this code (at the time of writing) requires a <em>nightly</em> Rust compiler in order to compile. One can be obtained easily using the command <code>rustup default nightly</code>.</p>
+<p>The system call in Linux for getting the user ID of the user executing the process is <code>geteuid</code>, with system call number <code>0x6b</code>. To make this system call, we move <code>0x6b</code> into <code>%rax</code>, execute the <code>syscall</code> instruction, and then allow the response from the kernel (placed in <code>%rax</code>) to be moved into our variable <code>answer</code> in Rust. Any more detail on this process in Rust is outside the scope of this book.</p>
+<p>System calls are provided on x86-64 systems via a trapping instruction called <code>syscall</code>. It is quite interesting to study how programs can use this instruction to invoke Linux system calls directly. All arguments to Linux system calls are passed through general-purpose registers rather than the stack. By convention, register <code>%rax</code> contains the system call number, with up to six arguments in the <code>%rdi</code>, <code>%rsi</code>, <code>%rdx</code>, <code>%r10</code>, <code>%r8</code>, and <code>%r9</code>. The first argument is in <code>%rdi</code>, the second in <code>%rsi</code>, and so on. On return from the system call, registers <code>%rcx</code> and <code>%r11</code> are destroyed, and <code>%rax</code> contains the return value. A negative return value between -4095 and -1 indicates an error corresponding to the negative <code>errno</code>.</p>
+<h2 id="processes"><a class="header" href="#processes">Processes</a></h2>
+<h3 id="logical-control-flow"><a class="header" href="#logical-control-flow">Logical Control Flow</a></h3>
+<h3 id="concurrent-flows"><a class="header" href="#concurrent-flows">Concurrent Flows</a></h3>
+<h3 id="private-address-space"><a class="header" href="#private-address-space">Private Address Space</a></h3>
+<h3 id="user-and-kernel-modes"><a class="header" href="#user-and-kernel-modes">User and Kernel Modes</a></h3>
+<h3 id="context-switches"><a class="header" href="#context-switches">Context Switches</a></h3>
+<h2 id="system-call-error-handling"><a class="header" href="#system-call-error-handling">System Call Error Handling</a></h2>
+<p>Thankfully, since Rust handles our system calls internally and translates their results to the Rust <code>Result</code> type, there is no special error-handling required for system calls that might be required in other languages. When a function is called that internally requires a system call (for example, reading a file), Rust will handle the response from the kernel and transform it in to a <code>Result</code> type accordingly.</p>
+<h2 id="process-control"><a class="header" href="#process-control">Process Control</a></h2>
+<p>Unix provides a number of system calls for manipulating processes. Many of these system calls have abstractions in Rust that permit them to be used in Rust programs. This section describes the most important ones and gives examples for their use.</p>
+<h3 id="obtaining-process-ids"><a class="header" href="#obtaining-process-ids">Obtaining Process IDs</a></h3>
+<p>In Unix, each process has a non-zero 32-bit <em>process ID (PID)</em>. The function in Rust that can get this value is <code>std::process::id</code>, which takes no arguments and returns a <code>u32</code>.</p>
+<pre><code class="language-rust ignore">pub fn id() -&gt; u32
+</code></pre>
+<p>Since processes can in turn spawn other processes, there is also a notion of a process having a <em>parent</em> within the kernel. All processes can trace their lineage back to the first process that the kernel spawned while the system was booting: <code>init</code>. Though Linux exposes a system call for finding the PID of the <em>parent</em> of the currently-running process, no such binding exists in Rust. Very similarly to how raw system calls were made in the <strong>Linux/x86-64 System Calls</strong> section, we can still find a way to make this system call using <code>unsafe</code> Rust:</p>
+<pre><code class="language-rust ignore">#![feature(asm)]
+
+fn main() {
+  unsafe {
+    let uid = get_parent_process_id();
+
+    println!(&quot;Parent Process ID: {}&quot;, uid);
+  }
+}
+
+unsafe fn get_parent_process_id() -&gt; u64 {
+  let answer: u64;
+  asm!(
+    &quot;mov rax, 0x6e&quot;,
+    &quot;syscall&quot;,
+    &quot;mov {answer}, rax&quot;,
+    answer = out(reg) answer,
+    lateout(&quot;rax&quot;) _,
+    lateout(&quot;r11&quot;) _,
+    lateout(&quot;rcx&quot;) _
+  );
+  answer
+}
+</code></pre>
+<h3 id="creating-and-terminating-processes"><a class="header" href="#creating-and-terminating-processes">Creating and Terminating Processes</a></h3>
+<p>From a programmer's perspective, we can think of a process as being in one of three states:</p>
+<blockquote>
+<p><em>Running</em>. The process is either executing on the CPU or waiting to be executed and will eventually be scheduled by the kernel. <em>Stopped</em>. The execution of the process is <em>suspended</em> and will not be scheduled. A process stops as a result of receiving a <code>SIGSTOP</code>, <code>SIGTSTP</code>, <code>SIGTTIN</code>, or <code>SIGTTOU</code> signal, and it remains stopped until it receives a <code>SIGCONT</code> signal, at which point it becomse running again. (A <em>signal</em> is a form of software interrupt that will be described in detail soon.) <em>Terminated</em>. The process is stopped permanently. A process becomes terminated for one of three reasons: (1) receiving a signal whose default action is to terminate the process, (2) returning from the main routine, or (3) calling the <code>std::process::exit</code> function.</p>
+</blockquote>
+<p>The third method of terminating a process relies on a function provided by the <code>std::process</code> module:</p>
+<pre><code class="language-rust ignore">pub fn exit(code: i32) -&gt; !
+</code></pre>
+<p>Recall that the <code>!</code> return type indicates that a function does not return control to the calling function.</p>
+<p>New processes can be spawned using the <code>std::process::Command</code> module. Assume that there exists some small binary file called <code>spawn</code> that exists in the working directory of a Rust program. This binary file prints &quot;Hello world!&quot; to standard output when it runs. The following code would work to execute that binary and print the output that it provides:</p>
+<pre><code class="language-rust ignore">use std::process::Command;
+
+fn main() {
+  println!(&quot;Spawning child process...&quot;);
+
+  let out = Command::new(&quot;./spawn&quot;).output().expect(&quot;Failed to spawn new process&quot;);
+  let out_string = String::from_utf8(out.stdout).unwrap_or_else(|_| {
+    String::from(&quot;Standard output from spawned process contained unsupported characters&quot;)
+  });
+
+  print!(&quot;{}&quot;, out_string);
+}
+</code></pre>
+<p>Internally, Rust's spawning of this process makes heavy use of the system calls <code>fork</code> and <code>execvp</code>. <code>fork</code> exists to clone the current process. This new process is exactly the same in every way <em>except</em> that the process ID is different. Moreover, <code>fork</code>, by its nature, returns <em>two</em> times — once in the original process and once in the new child process. It returns with different values for each, though: the parent receives the child's PID and the child receives <code>0</code>. In this way, subsequent code can use the returned value from <code>fork</code> to decide on different tasks to perform.</p>
+<p>In the case of Rust spawning a new process, the child process that is spawned once <code>fork</code> has been called checks for the return value from <code>fork</code>. In the case that it is <code>0</code> and the running process is the <em>child</em> process, Rust then proceeds to execute another system call: <code>execvp</code>. This, as would be necessary to execute a file, is a request to the kernel to execute the binary code contained in the file passed to the system call.</p>
+<p>One of the important notes about the <code>fork</code> system call is that it duplicates the memory space of the calling process for the child. This means that changes made in the child process will <em>not</em> be reflected in the parent, since their memory space is (at the instant of process cloning) identical, but not the same space in memory.</p>
+<h3 id="reaping-child-processes"><a class="header" href="#reaping-child-processes">Reaping Child Processes</a></h3>
+<p>When a process terminates for any reason, the kernel does not remove it from the system immediately. Instead, the process is kept around in a terminated state until it is <em>reaped</em> by its parent. When the parent reaps the terminated child, the kernel passes the child's exit status to the parent and then discards teh terminated process, at which point it ceases to exist. A terminated process that has not yet been reaped is called a <em>zombie</em>.</p>
+<p>When a parent process terminates, the kernel arranges for the <code>init</code> process to become the adopted parent of any orphaned children. If a parent process terminates without reaping its zombie children, then the kernel arranges for the <code>init</code> process to reap them. Long-running programs such as shells or servers, however, should always reap their zombie children. Even though zombies are not running, they still consume system memory resources.</p>
+<p>A process waits for its children to terminate or stop by calling the <code>waitpid</code> function. In Rust, this system call is used internally when <code>Command</code> spawns a new process. <code>waitpid</code> provides ways for the calling process to examine many of its child processes at once, and encodes information in its return value about the exit codes from those processes so that the parent can take action based on whether the child process succeeded or failed.</p>
+<h3 id="putting-processes-to-sleep"><a class="header" href="#putting-processes-to-sleep">Putting Processes to Sleep</a></h3>
+<p>Rust has a function called <code>std::thread::sleep</code> which enables the thread to request to be suspended for a certain amount of time.</p>
+<pre><code class="language-rust ignore">pub fn sleep(dur: Duration)
+</code></pre>
+<p>It is guaranteed that the program will sleep for no <em>less</em> than the amount of time given, though slight variations in the operating system's scheduler will usually cause the program to sleep for a small amount longer than requested. Internally, this uses the <code>nanosleep</code> system call, causing the process to be unscheduled by the kernel <em>unless</em> a signal needs to be handled by the program. In this case, the <code>nanosleep</code> call may need to be made by Rust many times to ensure that the appropriate amount of time is slept through, since upon completing the handling of the signal, the program resumes execution. Luckily, Rust handles these intricacies internally.</p>
+<h2 id="signals"><a class="header" href="#signals">Signals</a></h2>
+<p>...</p>
+<h2 id="nonlocal-jumps"><a class="header" href="#nonlocal-jumps">Nonlocal Jumps</a></h2>
+<h2 id="tools-for-manipulating-processes"><a class="header" href="#tools-for-manipulating-processes">Tools for Manipulating Processes</a></h2>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="chapter-10-system-level-io"><a class="header" href="#chapter-10-system-level-io">Chapter 10: System Level I/O</a></h1>
+<p>What is I/O? <em>Computer Systems: A Programmer's Perspective</em> offers the following definition: </p>
+<blockquote>
+<p><strong>Input/output (I/O)</strong> is the process of copying data between main memory and  external devices such as disk drives, terminals, and networks. An input operation copies data from an I/O device to main memory, and an output operation copies data from memory to a device. </p>
+</blockquote>
+<p>In this chapter, we discuss how to perform system-level I/O using system-level functions provided by the kernel and higher-level functions provided by programming languages. Specifically, we examine the Unix I/O API and Rust's standard library and compare how to use them for input and output operations. </p>
+<p>Rust programs can invoke Unix I/O system calls directly by using the <a href="https://docs.rs/syscall/0.2.1/syscall/"><code>syscall</code></a> crate. However, it is usually unnecessary to use these syscalls because Rust provides wrapper functions for most of them. We refer to system calls and their corresponding wrapper functions interchangeably as <strong>system-level functions</strong>.</p>
+<p>On Linux systems, we use the system-level <strong>Unix I/O</strong> functions provided by the kernel. Programming languages build on top of these functions to offer higher-level, abstracted facilities for performing I/O. While it is usually sufficient enough to use the higher-level I/O functions provided by programming languages, there are some cases where we may need to use the kernel's I/O functions directly. </p>
+<p>This chapter introduces you to the general concepts of Unix I/O and standard I/O and teaches you how to perform I/O in your own programs. While this chapter serves as a general introduction to I/O, it also lays a solid foundation for other systems concepts. As <em>Computer Systems: A Programmer's Perspective</em> states:</p>
+<blockquote>
+<p>I/O is integral to the operation of a system, and because of this, we often encounter circular dependencies between I/O and other systems ideas. </p>
+</blockquote>
+<p>We do not discuss the Windows I/O model and the I/O functionalities provided by the Microsoft run-time library, but Rust provides a <a href="https://doc.rust-lang.org/std/os/windows/io/index.html">Windows-specific I/O crate</a>, which you are free to explore on your own!  </p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="101---unix-io"><a class="header" href="#101---unix-io">10.1   Unix I/O</a></h1>
+<p>Linux is in the class of Unix-like operating systems, which all behave similarly to the Unix operating system. For example, they all support certain features, such as multiple users, separation between kernel mode and user mode, and a hierarchical file system, which we discuss in 10.2. They also usually share one of the defining features of Unix: &quot;Everything is a file&quot;. <a href="https://www.computerhope.com/jargon/u/unix-like.htm">[1]</a> </p>
+<h2 id="1011---everything-is-a-file"><a class="header" href="#1011---everything-is-a-file">10.1.1   Everything is a file</a></h2>
+<p>On Linux systems, a <strong>file</strong> is represented as a sequence of <em>m</em> bytes:</p>
+<center><i>B<sub>0</sub>, B<sub>1</sub>, B<sub>2</sub>,..., B<sub>m-1</sub></i></center>
+<br>
+<p>All I/O devices (such as networks, disks, terminals, and even the kernel itself) are represented as files, so everything is essentially a file, which is really just a sequence of bytes. This straightforward mapping of I/O devices to files makes it easy for Linux to develop a simple, low-level API around it. Furthermore, since everything is represented with one main communication primitive (the file), the API can ensure that it performs in a uniform and consistern manner. We call this API <strong>Unix I/O</strong>. </p>
+<h2 id="1012---unix-io-functions"><a class="header" href="#1012---unix-io-functions">10.1.2   Unix I/O Functions</a></h2>
+<p>The following list shows the standard ways in which Unix I/O's functions are performed: </p>
+<ol>
+<li><em>Opening files:</em> When an application wants to access a file, it asks the kernel to <code>open</code> the file. In response, the kernel sends back a <strong>descriptor</strong>, which is a small nonnegative integer that identifies the file while it is open. The application keeps track of the descriptor, while the kernel keeps track of the the open file.</li>
+<li><em>Changing the current file position:</em> The kernel maintains a file position <em>k</em> for each open file, where <em>k</em> is the byte offset from the beginning of a file. You can think of the file position like a cursor. An application can change <em>k</em> by performing a <code>seek</code> operation.</li>
+<li><em>Reading and writing files:</em> When an application requests to <code>read</code> from a file, the contents of the file are copied to memory. A read operation copies <em>n</em> bytes from the file, starting at the current file position <em>k</em> and then incrementing <em>k</em> by <em>n</em>. If a read operation is called where <em>k</em> is greater than the file's size, then an end-of-file (EOF) condition is triggered and detected by the calling application. The <code>write</code> operation works in a similar way, except instead of copying bytes from a file to memory, bytes are copied from memory to a file.</li>
+<li><em>Closing files:</em> Once an application is done accessing a file, it asks the kernel to <code>close</code> the file. The kernel consequently frees all the data structures that were created when opening the file and returns the file's descriptor to the pool of available descriptors.</li>
+</ol>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="102---files"><a class="header" href="#102---files">10.2   Files</a></h1>
+<h2 id="1021---linux-file-types"><a class="header" href="#1021---linux-file-types">10.2.1   Linux File Types</a></h2>
+<p>The Linux system categorizes files into different <strong>types</strong>, where a file's type indicates its role in the system. Linux file types include:</p>
+<ul>
+<li><em>Regular files:</em> These contain arbitrary data. There are two subtypes: <em>text files</em> and <em>binary files</em>. Text files are files that contain only ASCII or Unicode characters, and binary files are all other regular files. Applications usually distinguish between these two, but the kernel doesn't.</li>
+<li><em>Directories:</em> These are files that maintain the mappings between filenames and files, which can be other directories. You can think of them as folders in your filesystem. They contain an array of <em>links</em>, where each link is the mapping between a filename and a file. Each directory contains at least two entries: 
+<ol>
+<li><code>.</code> (dot) - a link to the directory itself </li>
+<li><code>..</code> (dot-dot) - a link to the <em>parent directory</em> in the directory hierarchy</li>
+</ol>
+</li>
+<li><em>Sockets:</em> These types of files are used in network programming to communicate with another process across a network.</li>
+</ul>
+<p>There are other types of files specified by the Linux system, but those are beyond our scope for now. </p>
+<h2 id="1022---the-linux-filesystem"><a class="header" href="#1022---the-linux-filesystem">10.2.2   The Linux Filesystem</a></h2>
+<p>The Linux filesystem is organized as a <strong>single directory hierarchy</strong> that is anchored by a <strong>root directory</strong> named <code>/</code> (slash). This structure is similar to that of a tree. Every file in the filesystem is a child of the root, either directly or indirectly.</p>
+<p>Pathnames identify locations in the directory hierarchy. They are formatted strings that follow the pattern <code>/filename1/filename2/.../filename3</code>, where the first slash <code>/</code> is optional. There are two forms of pathnames: </p>
+<ol>
+<li><em>Absolute pathnames:</em> These pathnames start with a slash, and they denote a path from the root node. </li>
+<li><em>Relative pathnames:</em> These pathnames start with a filename, and they denote a path from the current working directory, not the root. </li>
+</ol>
+<h2 id="1023---a-short-aside-on-processes"><a class="header" href="#1023---a-short-aside-on-processes">10.2.3   A Short Aside on Processes</a></h2>
+<p>We mentioned earlier that I/O is closely related to other systems ideas. One of these ideas is a process. Processes and I/O often work together, as I/O plays a central role in process creation and execution, while process creation plays a central role in how files are shared betwen processes. </p>
+<p>A <strong>process</strong> is an instance of a program being executed. One component of a process is its <strong>context</strong>, which saves information about its current state. One piece of information that is included in a process's context is its current location, which is also known as its <strong>current working directory</strong>. You can change your shell's current working directory using the <code>cd</code> command.</p>
+<h2 id="1024---how-files-are-represented-in-rust"><a class="header" href="#1024---how-files-are-represented-in-rust">10.2.4   How Files are Represented in Rust</a></h2>
+<p>In the upcoming sections, we will show you how to use Rust's standard library to perform I/O. Most of these I/O functions revolve around the <a href="https://doc.rust-lang.org/std/fs/struct.File.html"><code>File</code></a> struct in Rust's standard library. However, I/O functions can also be performed on other types, such as <a href="https://doc.rust-lang.org/std/net/struct.TcpStream.html"><code>TcpStream</code></a> and <a href="https://doc.rust-lang.org/std/vec/struct.Vec.html"><code>Vec&lt;T&gt;</code></a>.</p>
+<p>The <code>File</code> struct represents a reference to an open file on the filesystem. </p>
+<pre><code class="language-rust ignore">pub struct File {
+    inner: fs_imp::File,
+}
+</code></pre>
+<p><code>File</code> contains one member: <code>inner</code>, which is of the type <code>fs_imp::File</code>, where <code>fs_imp</code> is an identifier for the [<code>sys::fs</code>] crate. The <code>sys::fs</code> crate is part of the internal docs and is not part of Rust's public API. However, we will provide a brief overview of its <code>File</code> struct so that you can have a general idea of what's going on under the hood. Furthermore, since we're focusing on Unix in this textbook, we specifically want to look at <a href="https://stdrs.dev/nightly/x86_64-unknown-linux-gnu/std/sys/unix/fs/index.html"><code>std::sys::unix::fs::File</code></a>. </p>
+<pre><code class="language-rust ignore">pub struct File(FileDesc);
+</code></pre>
+<p><a href="https://stdrs.dev/nightly/x86_64-unknown-linux-gnu/std/sys/unix/fd/struct.FileDesc.html"><code>FileDesc</code></a> comes from the <a href="https://stdrs.dev/nightly/x86_64-unknown-linux-gnu/std/sys/unix/fd/index.html"><code>std::sys::unix::fd</code></a> module and is a <code>c_int</code>, which is defined in <a href="https://docs.rs/libc/0.2.43/libc/type.c_int.html"><code>libc::c_int</code></a> as an <code>i32</code>. The <code>std::sys::unix::fd</code> is a nightly-only experimental API, so you will need to have <code>nightly</code> installed in order to directly run code from the <code>std::sys::unix</code> crate. </p>
+<p>In short, <code>File</code> is a generic type that contains one member, <code>inner</code>, which implements the system-specific file representation for the appropriate platform. On Unix systems, <code>inner</code> is a <code>std::sys::unix::fs::File</code> type, where the file contians a file descriptor, <code>FileDesc</code>.</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="103---opening-and-closing-files"><a class="header" href="#103---opening-and-closing-files">10.3   Opening and Closing Files</a></h1>
+<p>In this section, we discuss how to open and close files using Rust's <a href="https://doc.rust-lang.org/std/">standard library</a>. The Rust standard library contains the <a href="https://doc.rust-lang.org/std/io/index.html"><code>std::io</code></a> and <a href="https://doc.rust-lang.org/std/fs/index.html"><code>std::fs</code></a> modules for performing I/O and manipulating the filesystem, respectively.</p>
+<h2 id="1031---open"><a class="header" href="#1031---open">10.3.1   Open</a></h2>
+<p>The <code>File</code> struct has an <code>open</code> method implemented for it: </p>
+<pre><code class="language-rust ignore">pub fn open&lt;P: AsRef&lt;Path&gt;&gt;(path: P) -&gt; io::Result&lt;File&gt; {
+        OpenOptions::new().read(true).open(path.as_ref())
+    }
+</code></pre>
+<blockquote>
+<p><strong>New to Rust?</strong>
+<a href="https://doc.rust-lang.org/std/path/struct.Path.html"><code>Path</code></a> is a struct from the <a href="https://doc.rust-lang.org/std/path/index.html"><code>std::path</code></a> module that represents a slice of a path. It is similar to the <code>str</code> type. <code>Path</code> is really just a wrapper around <code>OsStr</code>, which is why they work directly on string according to the local platform's (in this case Unix) path syntax. This is an unsized type, which means that it must always be used behind a pointer like <code>&amp;</code> or <code>Box</code>. <code>AsRef</code> is used to perform cheap reference-to-reference conversions. Thus, the <code>&lt;P: AsRef&lt;Path&gt;&gt;</code> code specifies that the path argument must implement this trait. A path implements this trait if it can be converted to reference to <code>Path</code>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Traits</strong> define shared behavior among different types. The Rust compiler interprets traits as some functionality a particular type has and can share with other types. A type has the behavior specified by a trait if that trait is <em>implemented</em> for the type.  This basically means that we can call the functions defined for a trait on all types that have, or implement, that trait. </p>
+</blockquote>
+<p>The <code>File::open</code> function takes a path argument and returns an <code>io::Result&lt;File&gt;</code>, where <a href="https://doc.rust-lang.org/std/io/type.Result.html"><code>std::io::Result</code></a> is the specialized <code>Result</code> type for I/O operations. If <code>File::open</code> is successful, <code>Ok(File)</code> is returned. Otherwise, <a href="https://doc.rust-lang.org/std/io/struct.Error.html"><code>io::Error</code></a> is returned. </p>
+<pre><code class="language-rust ignore">type Result&lt;T&gt; = Result&lt;T, Error&gt;;
+</code></pre>
+<blockquote>
+<p><strong>Why does <code>std::io</code> use an alias of <code>std::result::Result</code>?</strong>
+When a <code>Result</code> type is used, it is generally assumed to be the <a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>std::result::Result</code></a> type. However, the I/O crate has specified an alias for <code>Result</code> that is used for I/O operations. This was done in order to avoid writing out <code>io::Error</code> directly.</p>
+</blockquote>
+<blockquote>
+<p><strong>New to Rust?</strong>
+The <code>Result</code> type is an enum with two variants: <code>Ok(T)</code> and <code>Err(E)</code>. The <code>Ok(T)</code> variant indicates that the operation was successful and returned a value of type <code>T</code>, while the <code>Err(E)</code> variant indicates that the operation was not successful and returned an error value of type <code>E</code>. </p>
+</blockquote>
+<pre><code class="language-rust ignore">enum Result&lt;T, E&gt; {
+   Ok(T),
+   Err(E),
+}
+</code></pre>
+<p>Now, let's put this all together and go through an example. Assume we have a file we want to open, <code>open_me.txt</code> that is in the same directory as <code>main.rs</code>.</p>
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
+
+fn main() {
+    let result = File::open(&quot;open_me.txt&quot;);
+    println!(&quot;The result of the open operation was: {:?}&quot;, result);
+}
+</code></pre></pre>
+<p>Note that if you hit the play button to run the code, you will see a &quot;No such file or directory&quot; error. This happens because the textbook's browser has no idea where to find the file. Running the program in your local directory returns: </p>
+<pre><code>cargo run
+   Compiling chapter_10_code v0.1.0 (../chapter_10_code)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.48s
+     Running `../chapter_10_code/target/debug/chapter_10_code`
+The result of the open operation was: Ok(File { fd: 3, path: &quot;/../chapter_10_code/src/open_me.txt&quot;, read: true, write: false })
+</code></pre>
+<p>We can see that we were able to successfully open <code>open_me.txt</code>. The <code>File</code>'s file descriptor, path, and read and write permissions are returned. </p>
+<h2 id="1032---openoptions"><a class="header" href="#1032---openoptions">10.3.2   OpenOptions</a></h2>
+<p>You may have noticed an <a href="https://doc.rust-lang.org/std/fs/struct.OpenOptions.html"><code>OpenOptions</code></a> struct being initialized in the function body of <code>File::open</code>. This struct encapsulates the options and files that can be used to configure how a file is opened. It also has an <code>open</code> method implemented for it. In fact, if you look back at the <code>File::open</code> code, you can see that <code>File::open</code> opens a file using <code>OpenOptions::open</code>. This is because <code>File::open</code> is actually an alias for <code>OpenOptions::open</code>. </p>
+<pre><code class="language-rust ignore">pub fn open&lt;P: AsRef&lt;Path&gt;&gt;(&amp;self, path: P) -&gt; io::Result&lt;File&gt; {
+        self._open(path.as_ref())
+    }
+</code></pre>
+<p><code>OpenOptions</code> has the same function definition as <code>File::open</code>, and the two can be used interchangeable. However, it is useful to use <code>OpenOptions</code> when you want to specify permissions or flags options for the file. This can be done with the <code>OpenOptions::new</code> method, which creates a blank new set of file options ready for configuration. All options are initially set to <code>false</code>. The permissons and flags options you can set include: </p>
+<ul>
+<li>read - Read permissions. If <code>true</code>, then the file should be read-able.</li>
+<li>write - Write permissions. If <code>true</code>, then the file should be write-able.</li>
+<li>append - Open the file in <em>append mode</em>. Before each <code>write</code> operation, position the file offset at the end of the file, as if with <code>seek</code>. This prevents overwriting previous content. </li>
+<li>truncate - If the file exists, then truncate it to length 0. The file must be opened with write access.</li>
+<li>create - Create a new file or open it if already exists.</li>
+<li>create_new - Creates a new file or fails if it already exists.</li>
+<li>custom_flags - Sets custom flags bits. (System-specific)</li>
+<li>mode - Sets the mode bits that a new file will be created with. The operating system masks out bits with the system's <code>umask</code> to produce the file's final permissons. Each process includes a <code>umask</code> in its context that is set by calling the <code>umask</code> function. When a process calls the <code>OpenOptions::open</code> function with some <code>mode</code> argument and creates a new file, the access permission bits of the new file are set to <code>mode &amp; ~umask</code>. If no <code>mode</code> is set, then the default value <code>0o666</code> is used. (System-specific)</li>
+</ul>
+<p>Just like the <code>std::fs::File</code> struct, <code>std::fs::OpenOptions</code> derives itself from <a href="https://stdrs.dev/nightly/x86_64-unknown-linux-gnu/std/sys/unix/fs/struct.OpenOptions.html"><code>std::sys::unix::fs::OpenOptions</code></a>:</p>
+<pre><code class="language-rust ignore">pub struct OpenOptions {
+    read: bool,
+    write: bool,
+    append: bool,
+    truncate: bool,
+    create: bool,
+    create_new: bool,
+    custom_flags: i32,
+    mode: mode_t,
+}
+</code></pre>
+<p>The <code>custom_flags</code> and <code>mode</code> fields are derived from the <a href="https://docs.rs/libc/0.2.95/libc/"><code>libc</code></a> crate. The symbolic names and permissions for these bits are shown in the table below:</p>
+<br>
+<table><thead><tr><th>Mask</th><th>Permissions</th></tr></thead><tbody>
+<tr><td>S_IRUSR</td><td>User (owner) can read the file</td></tr>
+<tr><td>S_IWUSR</td><td>User (owner) can write the file</td></tr>
+<tr><td>S_IXUSR</td><td>User (owner) can execute the file</td></tr>
+<tr><td>S_IRGRP</td><td>Members of the owner's group can read the file</td></tr>
+<tr><td>S_IWGRP</td><td>Members of the owner's group can write the file</td></tr>
+<tr><td>S_IXGRP</td><td>Members of the owner's group can execute the file</td></tr>
+<tr><td>S_IROTH</td><td>Others (anyone) can read the file</td></tr>
+<tr><td>S_IWOTH</td><td>Others (anyone) can write the file</td></tr>
+<tr><td>S_IXOTH</td><td>Others (anyone) can execute the file</td></tr>
+</tbody></table>
+<br>
+<center><b> Table 10.1: Access permission bits </b></center>
+<br>
+<p>Now, let's try the example from 10.3.1 with <code>OpenOptions::open</code> instead of <code>File::open</code>. This code is in the <code>chapter_10_code/src/section_3/open_options.rs</code> file.</p>
+<pre><code class="language-rust ignore">use std::fs::OpenOptions;
+
+fn main() {
+    let result = OpenOptions::new().read(true).open(&quot;open_me.txt&quot;);
+    println!(&quot;The result of the open operation was: {:?}&quot;, result);
+}
+</code></pre>
+<p>Running the program yields the following result: </p>
+<pre><code>cargo run
+   Compiling chapter_10_code v0.1.0 (../chapter_10_code)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.69s
+     Running `../chapter_10_code/target/debug/chapter_10_code`
+The result of the open operation was: Ok(File { fd: 3, path: &quot;../chapter_10_code/src/open_me.txt&quot;, read: true, write: false })
+</code></pre>
+<p>Great! We can see that both <code>File::open</code> and <code>OpenOptions::open</code> returned the same result. Now, let's consider an example where you want to open a file with both read and write permissions set.</p>
+<pre><code class="language-rust ignore">use std::fs::OpenOptions;
+
+fn main() {
+    let result = OpenOptions::new().read(true).write(true).open(&quot;open_me.txt&quot;);
+    println!(&quot;The result of the open operation was: {:?}&quot;, result);
+}
+</code></pre>
+<pre><code>cargo run
+   Compiling chapter_10_code v0.1.0 (../chapter_10_code)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.66s
+     Running `../chapter_10_code/target/debug/chapter_10_code`
+The result of the open operation was: Ok(File { fd: 3, path: &quot;../chapter_10_code/src/open_me.txt&quot;, read: true, write: true })
+</code></pre>
+<p>We can see that both <code>read</code> and <code>write</code> are set to <code>true</code>, so it worked! Here are a couple exercises for you to try: (You can assume that the file, <code>file.txt</code> is in the same directory as <code>main.rs</code>.)</p>
+<ul>
+<li>How would you open a file with <code>create</code> set? </li>
+<li>How would you open a file with <code>truncate</code> set? </li>
+<li>How would you open a file in a mode where anyone can read the file? </li>
+</ul>
+<p>The solutions to these exercises are below. Click the arrow button to unhide them!</p>
+<details>
+  <summary>Exercise Solutions</summary> 
+<pre><code class="language-rust ignore">  // You will need to add `libc = &quot;0.2&quot;` to `[dependencies]` in your Cargo.toml file.
+  extern crate libc; 
+  use std::fs::OpenOptions;
+  use std::os::unix::fs::OpenOptionsExt;
+
+  fn main() {
+      // Opens the file with `create` set
+      let _create_file = OpenOptions::new().read(true).write(true).create(true).open(&quot;file.txt&quot;);
+
+      // Opens the file with `truncate` set 
+      let _trunc_file = OpenOptions::new().write(true).truncate(true).open(&quot;file.txt&quot;);
+
+      // Opens the file such that anyone can read it
+      let mut options = OpenOptions::new();
+      options.write(true);
+      if cfg!(unix) {
+          options.mode(libc::S_IROTH.into());
+      }
+      let _mode_file = options.open(&quot;file.txt&quot;);
+  }
+</code></pre>
+</details>
+<h2 id="1033---close"><a class="header" href="#1033---close">10.3.3   Close</a></h2>
+<p>Files are automatically closed once they go out of scope.</p>
+<pre><code class="language-rust ignore">fn main() {
+    let file = File::open(&quot;file.txt&quot;); // file is now in scope
+    // do things with the file
+} // file goes out of scope and is automatically closed
+</code></pre>
+<p>Errors that are detected upon closing are ignored because <code>FileDesc</code> implements the <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait, which acts as a destructor on a value once it is no longer needed. In order to handle errors, you must use the method <a href="https://doc.rust-lang.org/std/fs/struct.File.html#method.sync_all"><code>sync_all</code></a>. <code>Sync_all</code> attempts to sync all OS-internal metadata to the filesystem. Dropping a file will ignore errors in synchronizing the in-memory data. Here is an example of how you might use <code>sync_all</code>:</p>
+<pre><code class="language-rust ignore">use std::fs::File;
+use std::io::prelude::*;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    let mut file = File::create(&quot;file.txt&quot;)?;
+    file.write_all(b&quot;Hello, world!&quot;)?;
+    // do some stuff with the file
+    
+    file.sync_all()?;
+    Ok(())
+}
+</code></pre>
+<blockquote>
+<p><strong>New to Rust?</strong>
+The <code>()</code> type is known as the <strong>unit</strong> type in Rust. The unit type has one value, <code>()</code>, and it is used when there is no other meaningful value that can be returned. Functions that do not explictly declare a return type automatically return the unit type. Therefore, the following two function definitions have equivalent return types:</p>
+<pre><code class="language-rust ignore">fn func1() -&gt; () {}
+fn func2() {}
+</code></pre>
+</blockquote>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="104---reading-and-writing-files"><a class="header" href="#104---reading-and-writing-files">10.4   Reading and Writing Files</a></h1>
+<p>In this section, we discuss the <a href="https://doc.rust-lang.org/std/io/trait.Read.html"><code>Read</code></a> and <a href="https://doc.rust-lang.org/std/io/trait.Write.html"><code>Write</code></a> traits, which provide a general interface for reading and writing input and output. </p>
+<h2 id="1041---read"><a class="header" href="#1041---read">10.4.1   Read</a></h2>
+<p>The <code>Read</code> trait reads bytes from a source. A type that implements this trait is called a <strong>reader</strong>. Types such as <code>File</code>s, <code>TcpStream</code>s, and <code>Vec&lt;T&gt;</code>s are readers. The <code>Read</code> trait defines multiple read functionalities, with a core <a href="https://doc.rust-lang.org/std/io/trait.Read.html#tymethod.read"><code>read</code></a> method that attempts to pull bytes from a source into a provided buffer. The other read methods build off of this one <code>read</code> method and include <a href="https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_end"><code>read_to_end</code></a>, <a href="https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string"><code>read_to_string</code></a>, <a href="https://doc.rust-lang.org/std/io/trait.Read.html#method.read_exact"><code>read_exact</code></a>, and <a href="https://doc.rust-lang.org/std/io/trait.Read.html#method.read_vectored"><code>read_vectored</code></a>. Readers are only required to implement the <code>read</code> method, which gives them the ability to use the other read methods.</p>
+<p>Before we get into the different ways we can read files, let's take a closer look at the <code>read</code> method that readers are required to implement.</p>
+<pre><code class="language-rust ignore">fn read(&amp;mut self, buf: &amp;mut [u8]) -&gt; Result&lt;usize&gt;
+</code></pre>
+<p>The <code>read</code> method copies (at most) <em>n</em> bytes from the current file position of the file identified by descriptor <em>fd</em> to memory location <em>buf</em>. If <code>read</code> is successful, then <code>Ok(usize)</code> is returned, where <code>usize</code> is the number of bytes read. If the number of bytes returned is 0, then either the reader has reached the end of the file or the buffer was initialized with length 0. If <code>read</code> is unsuccessful, then it returns an <code>Err</code> value. </p>
+<p>In some situations, <code>read</code> and <code>write</code> copy less bytes than requested by the application. These are known as <strong>short counts</strong>, and they do not result in an error. They may occur for the following reasons: </p>
+<ul>
+<li><em>Encountering EOF on reads:</em> Sometimes we want to read from a file that has less than <em>n</em> bytes from the current file position to the EOF, which causes a short count. For instance, suppose we want to read from a file that contains 20 more bytes from the current file position and that we want to read the file in 50-byte chunks. In this case, the next<code>read</code> will return a short count of 20, and the <code>read</code> after that will signal that it has reached the end of the file by returning a short count of 0. </li>
+<li><em>Reading text lines from a terminal:</em> If an open file is associated with a terminal (i.e. a keyboard and display), then the number of bytes that can be read from the file is restricted by a text line in the terminal. Each <code>read</code> function copies one text line at a time, returning a short count equal to the number of bytes of the text line. </li>
+<li><em>Reading and writing network sockets:</em> If an open file is associated with a network socket (which we discuss more in Chapter 11), then internal buffering constraints and long network delays can cause <code>read</code> and <code>write</code> to return short counts. Short counts can also occur when <code>read</code> and <code>write</code> are called on a Linux <strong>pipe</strong>, which is an interprocess communication mechanism. Pipes are beyond our scope, but they basically let you use multiple commands such that the ouptut of one is passed as input to the next.</li>
+<li><em>Read was interruped by a signal</em>.</li>
+</ul>
+<p>Other than these cases, you will typically not encounter short counts, especially if you are reading from a disk file (except when you reach the end of the file).</p>
+<p>Let's try an example where we read from a file, <code>read_me.txt</code> that is located in the same directory as <code>main.rs</code>. </p>
+<pre><code class="language-rust ignore">use std::io;
+use std::io::prelude::*;
+use std::fs::File;
+
+fn main() -&gt; io::Result&lt;()&gt; {
+    let mut f = File::open(&quot;read_me.txt&quot;)?;
+    let mut buffer = [0; 25];
+
+    // read at most 25 bytes from the file
+    let num_bytes = f.read(&amp;mut buffer)?;
+    println!(&quot;Read {} bytes from the file.&quot;, num_bytes);
+
+    Ok(())
+}
+</code></pre>
+<p>Running the program in your local directory returns: </p>
+<pre><code>cargo run
+   Compiling section_4_code v0.1.0 (../chapter_10_code/src/section_4_code)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.73s
+     Running `../section_4_code/target/debug/section_4_code`
+Read 13 bytes from the file.
+</code></pre>
+<p>We can also read the contents of a file into a string. Let's write some text inside <code>read_me.txt</code>:</p>
+<pre><code>hello, world!
+</code></pre>
+<p>Now, let's try reading what we just wrote in the file:</p>
+<pre><code class="language-rust ignore">use std::io;
+use std::io::prelude::*;
+use std::fs::File;
+
+fn main() -&gt; io::Result&lt;()&gt; {
+    let mut f = File::open(&quot;read_me.txt&quot;)?;
+    let mut string_buffer = String::new();
+
+    f.read_to_string(&amp;mut string_buffer)?;
+    println!(&quot;The file says: {}&quot;, string_buffer);
+
+    Ok(())
+}
+</code></pre>
+<pre><code>cargo run
+   Compiling section_4_code v0.1.0 (../chapter_10_code/src/section_4_code)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.33s
+     Running `../chapter_10_code/src/section_4_code/target/debug/section_4_code`
+The file says: hello, world!
+</code></pre>
+<blockquote>
+<p><strong>New to Rust?</strong> The <a href="https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html"><code>?</code></a> operator allows for easier error handling. You can apply <code>?</code> to functions that return a <code>Result</code> value. If the function return the <code>Ok</code> variant, then <code>?</code> unwraps it and returns the inner value. Otherwise, if it was the <code>Err</code> variant, then <code>?</code> returns from the function you are currently in. Using <code>?</code> in place of <code>match</code> statements or other forms of handling <code>Result</code> values is much more straightforward and visually clean. </p>
+</blockquote>
+<p>Here are some exercises for you to try: </p>
+<ul>
+<li>Open a file with the <code>read</code> option set to false. Then try reading from it. What happens? </li>
+<li>Read the contents of <code>read_me.txt</code> into a vector. Then print the vector. (Hint: To ensure that all contents in the file are copied to the vector, use <code>read_to_end</code>).</li>
+</ul>
+<p>The solutions to these exercises are below. Click the arrow button to unhide them!</p>
+<details>
+  <summary>Exercise Solutions</summary> 
+<pre><code class="language-rust ignore">  use std::io;
+  use std::io::prelude::*;
+  use std::fs::OpenOptions;
+
+  fn main() -&gt; io::Result&lt;()&gt; {
+      let mut unreadable_file = OpenOptions::new().read(false).create(true).open(&quot;file.txt&quot;)?;
+      let mut string_buffer = String::new();
+      // This returns: Error: Os { code: 22, kind: InvalidInput, message: &quot;Invalid argument&quot; }
+      unreadable_file.read_to_string(&amp;mut string_buffer)?;
+
+      let mut f = OpenOptions::new().read(true).open(&quot;read_me.txt&quot;)?;
+      let mut vec_buffer = Vec::new();
+      f.read_to_end(&amp;mut vec_buffer)?;
+      // This returns: The file says: [104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33]
+      println!(&quot;The file says: {:?}&quot;, vec_buffer);
+
+      Ok(())
+  }
+</code></pre>
+</details>
+<h2 id="1042---write"><a class="header" href="#1042---write">10.4.2   Write</a></h2>
+<p>The <code>Write</code> trait writes data into an object, which is a byte-oriented sink. Types that implement the <code>Write</code> trait are also known as <strong>writers</strong>. Writers are required to implement two methods: <code>write</code> and <code>flush</code>:</p>
+<ul>
+<li><code>write</code> - Writes data into an object and returns the number of bytes that were written.</li>
+<li><code>flush</code> - Ensures that all buffered data has been pushed out to the &quot;true sink&quot;.</li>
+</ul>
+<p>Other methods of the <code>Write</code> trait include <a href="https://doc.rust-lang.org/std/io/trait.Write.html#method.write_all"><code>write_all</code></a>, <a href="https://doc.rust-lang.org/std/io/trait.Write.html#method.write_vectored"><code>write_vectored</code></a>, <a href="https://doc.rust-lang.org/std/io/trait.Write.html#method.write_all_vectored"><code>write_all_vectored</code></a>, and <a href="https://doc.rust-lang.org/std/io/trait.Write.html#method.write_fmt"><code>write_fmt</code></a>. <code>File</code> implements <code>write</code>, <code>write_vectored</code>, and <code>flush</code>. However, we can still use the other <code>write</code> methods because they build off the core two methods <code>write</code> and <code>flush</code>. </p>
+<pre><code class="language-rust ignore">fn write(&amp;mut self, buf: &amp;[u8]) -&gt; Result&lt;usize&gt;
+</code></pre>
+<p>The <code>write</code> method writes at most <em>n</em> bytes from a buffer into the writer and returns <code>Ok(usize)</code> if the operation is successful, where <code>usize</code> is the number of bytes written, or an <code>Err</code> value if the operation was unsuccessful. If the number of bytes returned is 0, then either the underlying object is no longer able to accept any more bytes or the provided buffer is empty. Just like <code>read</code>, short counts are not considered errors for <code>write</code>. Furthermore, if the <code>write</code> function is interrupted, an <code>ErrorKind::Interrupted</code> error is raised but is non-fatal, so the <code>write</code> operation can be tried again if there is nothing else to do. </p>
+<pre><code class="language-rust ignore">fn flush(&amp;mut self) -&gt; Result&lt;()&gt;
+</code></pre>
+<p>The <code>flush</code> method flushes the output stream, ensuring that all buffered contents reach their destination. If a short count is encountered, then this does produce an error, unlike <code>read</code> and <code>write</code>, even if the short count occurs because it has reached the end of the file. </p>
+<p>The example below shows how to write to a file. We can check if the operation worked by reading the file. </p>
+<pre><code class="language-rust ignore">use std::io::prelude::*;
+use std::fs::File;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    let mut buffer = File::create(&quot;write.txt&quot;)?;
+    buffer.write(b&quot;hello file!&quot;)?;
+    
+    let mut file_contents = String::new();
+    let mut f = File::open(&quot;write.txt&quot;)?;
+    f.read_to_string(&amp;mut file_contents)?;
+    println!(&quot;The file says: {}&quot;, file_contents);
+
+    Ok(())
+}
+</code></pre>
+<p>Running the program outputs: </p>
+<pre><code>cargo run
+   Compiling section_4_code v0.1.0 (/Users/stephaniediao/Desktop/rust/chapter_10_code/src/section_4_code)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.80s
+     Running `/Users/stephaniediao/Desktop/rust/chapter_10_code/src/section_4_code/target/debug/section_4_code`
+The file says: hello file!
+</code></pre>
+<p>Great! We know it works because we were able to read what we wrote to the file. Now, let's try an example with <code>flush</code>.</p>
+<pre><code class="language-rust ignore">use std::io::prelude::*;
+use std::fs::File;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    let mut buffer = File::create(&quot;flush.txt&quot;)?;
+
+    buffer.write_all(b&quot;All these bytes should be written!&quot;)?;
+    buffer.flush()?;
+
+    let mut file_contents = String::new();
+    let mut f = File::open(&quot;flush.txt&quot;)?;
+    f.read_to_string(&amp;mut file_contents)?;
+    println!(&quot;The file says: {}&quot;, file_contents);
+
+    Ok(())
+}
+</code></pre>
+<pre><code>cargo run
+   Compiling section_4_code v0.1.0 (/Users/stephaniediao/Desktop/rust/chapter_10_code/src/section_4_code)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.05s
+     Running `/Users/stephaniediao/Desktop/rust/chapter_10_code/src/section_4_code/target/debug/section_4_code`
+The file says: All these bytes should be written!
+</code></pre>
+<h2 id="1043---bufreader-and-bufwriter"><a class="header" href="#1043---bufreader-and-bufwriter">10.4.3   BufReader and BufWriter</a></h2>
+<p><a href="https://doc.rust-lang.org/std/io/struct.BufReader.html"><code>BufReader</code></a> and <a href="https://doc.rust-lang.org/std/io/struct.BufWriter.html"><code>BufWriter</code></a> are two structs included in <code>std::io</code> that allow for more efficient reads and writes. The Rust documentation provides the following reason for why <code>BufReader</code> is particularly helpful: </p>
+<blockquote>
+<p>It can be excessively inefficient to work directly with a <code>Read</code> instance. For example, every call to read on <code>TcpStream</code> results in a system call. A <code>BufReader&lt;R&gt;</code> performs large, infrequent reads on the underlying <code>Read</code> and maintains an in-memory buffer of the results.
+<code>BufReader&lt;R&gt;</code> can improve the speed of programs that make small and repeated read calls to the same file or network socket. It does not help when reading very large amounts at once, or reading just one or a few times. It also provides no advantage when reading from a source that is already in memory, like a <code>Vec&lt;u8&gt;</code>.</p>
+</blockquote>
+<p><code>BufReader</code> also provides additional ways of reading files, such as <a href="https://doc.rust-lang.org/std/io/trait.BufRead.html#method.read_until"><code>read_until</code></a>, <a href="https://doc.rust-lang.org/std/io/trait.BufRead.html#method.read_line"><code>read_line</code></a>, <a href="https://doc.rust-lang.org/std/io/trait.BufRead.html#method.split"><code>split</code></a>, and <a href="https://doc.rust-lang.org/std/io/trait.BufRead.html#method.lines"><code>lines</code></a>. </p>
+<p><code>BufWriter</code> is also much more efficient than <code>Write</code>. The Rust documentation provides the following reason for why <code>BufWriter</code> is helpful: </p>
+<blockquote>
+<p>It can be excessively inefficient to work directly with something that implements <code>Write</code>. For example, every call to write on <code>TcpStream</code> results in a system call. A <code>BufWriter&lt;W&gt;</code> keeps an in-memory buffer of data and writes it to an underlying writer in large, infrequent batches.
+<code>BufWriter&lt;W&gt;</code> can improve the speed of programs that make small and repeated write calls to the same file or network socket. It does not help when writing very large amounts at once, or writing just one or a few times. It also provides no advantage when writing to a destination that is in memory, like a <code>Vec&lt;u8&gt;</code>.
+It is critical to call <code>flush</code> before <code>BufWriter&lt;W&gt;</code> is dropped. Though dropping will attempt to flush the contents of the buffer, any errors that happen in the process of dropping will be ignored. Calling <code>flush</code> ensures that the buffer is empty and thus dropping will not even attempt file operations.</p>
+</blockquote>
+<p>Let's go through an example for how to read and write from a file using <code>BufReader</code> and <code>BufWriter</code>. Specifically, we will try to copy text from one file to another, line by line. First, let's create a file <code>poem.txt</code> that contains the poem <em>When I Am Gone</em> by Shel Silverstein: </p>
+<pre><code>When I am gone what will you do?
+Who will write and draw for you?
+Someone smarter—someone new?
+Someone better—maybe YOU!
+</code></pre>
+<p>Let's start by just reading the file, line by line.</p>
+<pre><code class="language-rust ignore">use std::io::prelude::*;
+use std::io::{BufReader};
+use std::fs::File;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    let f = File::open(&quot;poem.txt&quot;)?;
+    let bufreader = BufReader::new(f);
+
+    for line in bufreader.lines() {
+        println!(&quot;{:?}&quot;, line);
+    }
+
+    Ok(())
+}
+</code></pre>
+<pre><code>cargo run
+   Compiling section_4_code v0.1.0 (/Users/stephaniediao/Desktop/rust/chapter_10_code/src/section_4_code)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.19s
+     Running `/Users/stephaniediao/Desktop/rust/chapter_10_code/src/section_4_code/target/debug/section_4_code`
+Ok(&quot;When I am gone what will you do?&quot;)
+Ok(&quot;Who will write and draw for you?&quot;)
+Ok(&quot;Someone smarter—someone new?&quot;)
+Ok(&quot;Someone better—maybe YOU!&quot;)
+</code></pre>
+<p>It works! So now let's try using <code>BufWriter</code> to write each line to another file, <code>poem_copy.txt</code>.</p>
+<pre><code class="language-rust ignore">use std::io::prelude::*;
+use std::io::{BufReader, BufWriter};
+use std::fs::File;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    let f1 = File::open(&quot;poem.txt&quot;)?;
+    let f2 = File::create(&quot;poem_copy.txt&quot;)?;
+    let bufreader = BufReader::new(f1);
+    let mut bufwriter = BufWriter::new(f2);
+
+    for line in bufreader.lines() {
+        bufwriter.write(&amp;line.unwrap().as_bytes())?;
+        bufwriter.write(b&quot;\n&quot;)?;
+    }
+
+    Ok(())
+}
+</code></pre>
+<p>After running the program, <code>poem_copy.txt</code> looks like this: </p>
+<pre><code>When I am gone what will you do?
+Who will write and draw for you?
+Someone smarter—someone new?
+Someone better—maybe YOU!
+</code></pre>
+<p>This means our program works correctly and has copied the contents of <code>poem.txt</code> to <code>poem2.txt</code>, line by line. Now, it's your turn! Try out the following exercises:</p>
+<ul>
+<li>Given the text file below, read the contents of the file until you have reached the first ',' delimeter. Double check that your program has stopped at the first ','. How many bytes were read?</li>
+<li>Then, split the text file on each whitespace.</li>
+</ul>
+<p><code>exercise.txt</code>:</p>
+<pre><code>It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way—in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.
+</code></pre>
+<p>The solutions to these exercises are below. Click the arrow button to unhide them!</p>
+<details>
+  <summary>Exercise Solutions</summary> 
+<pre><code class="language-rust ignore">  use std::io::prelude::*;
+  use std::io::{BufReader};
+  use std::fs::File;
+
+  fn main() -&gt; std::io::Result&lt;()&gt; {
+      let f = File::open(&quot;exercise.txt&quot;)?;
+      let mut bufreader = BufReader::new(f);
+      let mut buffer = Vec::new(); 
+
+      // Read from the file until we hit the first , delimeter
+      let num_bytes = bufreader.read_until(b',', &amp;mut buffer)?;
+      // This outputs: &quot;Number of bytes read: 25&quot;
+      println!(&quot;Number of bytes read: {}&quot;, num_bytes);
+      // This outputs: &quot;Text read: It was the best of times,&quot;
+      println!(&quot;Text read: {}&quot;, String::from_utf8(buffer).unwrap_or(&quot;Something went wrong.&quot;.to_string()));
+
+      let split_iter = bufreader.split(b' ');
+      for split in split_iter {
+          // This outputs each word in the file
+          println!(&quot;{:?}&quot;, String::from_utf8(split.unwrap()).unwrap_or(&quot;Something went wrong.&quot;.to_string()));
+      }
+
+      Ok(())
+  }
+</code></pre>
+</details><div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="106---reading-file-metadata"><a class="header" href="#106---reading-file-metadata">10.6   Reading File Metadata</a></h1>
+<p>In this section we discuss how to retrieve information about a file, also known as a file's <strong>metadata</strong>, using the <a href="https://doc.rust-lang.org/std/fs/fn.metadata.html"><code>metadata</code></a> function.</p>
+<h2 id="1061---the-metadata-struct"><a class="header" href="#1061---the-metadata-struct">10.6.1   The Metadata Struct</a></h2>
+<p>The <a href="https://doc.rust-lang.org/std/fs/struct.Metadata.html"><code>Metadata</code></a> struct stores known information about a file, such as its permissions, size, and modification times. It is derived from the <a href="https://stdrs.dev/nightly/x86_64-unknown-linux-gnu/std/sys/unix/fs/struct.FileAttr.html"><code>std::sys::unix::fs::FileAttr</code></a> struct, which contains two fields:</p>
+<pre><code class="language-rust ignore">pub struct FileAttr {
+    stat: stat64,
+    statx_extra_fields: Option&lt;StatxExtraFields&gt;,
+}
+</code></pre>
+<p><code>statx_extra_fields</code> is beyond the scope of this textbook. <a href="https://docs.rs/libc/0.2.71/libc/struct.stat64.html"><code>stat64</code></a> is a struct defined in the <code>libc</code> crate and contains the following members:</p>
+<pre><code class="language-rust ignore">pub struct stat64 {
+    pub st_dev: dev_t,
+    pub st_ino: ino64_t,
+    pub st_nlink: nlink_t,
+    pub st_mode: mode_t,
+    pub st_uid: uid_t,
+    pub st_gid: gid_t,
+    pub st_rdev: dev_t,
+    pub st_size: off_t,
+    pub st_blksize: blksize_t,
+    pub st_blocks: blkcnt64_t,
+    pub st_atime: time_t,
+    pub st_atime_nsec: i64,
+    pub st_mtime: time_t,
+    pub st_mtime_nsec: i64,
+    pub st_ctime: time_t,
+    pub st_ctime_nsec: i64,
+    // some fields omitted
+}
+</code></pre>
+<p>Most of the <code>stat64</code> struct members are beyond the scope of this textbook, except for <code>st_size</code> and <code>st_mode</code>. The <code>st_size</code> member contains the file size, in bytes, and the <code>st_mode</code> member contains the file permission bits and the file type, which we discussed in 10.3.1 and 10.2.1, respectively. Table 10.1 in section 10.3.1 shows the file permission bits. We can derive the file type from <code>st_mode</code> using the following constants from <code>libc</code>:</p>
+<pre><code class="language-rust ignore">pub const S_IFDIR:  ::mode_t = 16384;
+pub const S_IFREG:  ::mode_t = 32768;
+pub const S_IFLNK:  ::mode_t = 40960;
+pub const S_IFSOCK: ::mode_t = 49152;
+</code></pre>
+<p>These two members are used in Web servers and are discussed more in depth in Chapter 11.</p>
+<h2 id="1062---the-metadata-function"><a class="header" href="#1062---the-metadata-function">10.6.2   The Metadata Function</a></h2>
+<p>The <code>std::fs::metadata</code> function is defined as follows: </p>
+<pre><code class="language-rust ignore">pub fn metadata&lt;P: AsRef&lt;Path&gt;&gt;(path: P) -&gt; io::Result&lt;Metadata&gt; {
+    fs_imp::stat(path.as_ref()).map(Metadata)
+}
+</code></pre>
+<p>It calls the <a href="https://stdrs.dev/nightly/x86_64-unknown-linux-gnu/std/sys/unix/fs/fn.stat.html"><code>std::sys::unix::fs::stat</code></a> function:</p>
+<pre><code>pub fn stat(p: &amp;Path) -&gt; Result&lt;FileAttr&gt;
+</code></pre>
+<p>In short, the <code>metadata</code> function takes an argument that can be converted to a reference to a path and returns an <code>io::Result</code> type. If the operation is successful, then <code>Ok(Metadata)</code> is returned. Otherwise, it returns an  <code>Err</code> value. Two common reasons why <code>metadata</code> may fail include:</p>
+<ul>
+<li>The user lacks permissions to perform <code>metadata</code> on path.</li>
+<li>The path does not exist.</li>
+</ul>
+<p>The following example shows how to view a file's metadata. </p>
+<pre><code class="language-rust ignore">use std::fs::metadata;
+use std::fs::OpenOptions;
+
+fn main() -&gt; std::io::Result&lt;()&gt; {
+    let file = OpenOptions::new().create(true).read(true).write(true).open(&quot;file.txt&quot;)?;
+    let file_metadata = metadata(&quot;file.txt&quot;)?;
+
+    // This returns: &quot;File type: FileType(FileType { mode: 33188 })&quot;&quot;
+    println!(&quot;File type: {:?}&quot;, file_metadata.file_type());
+    // This returns: &quot;File permissions: Permissions(FilePermissions { mode: 33188 })&quot;
+    println!(&quot;File permissions: {:?}&quot;, file_metadata.permissions());
+    /* This returns: &quot;All metadata: Metadata { file_type: FileType(FileType { mode: 33188 }), 
+                      is_dir: false, is_file: true, 
+                      permissions: Permissions(FilePermissions { mode: 33188 }), 
+                      modified: Ok(SystemTime { tv_sec: 1622516353, tv_nsec: 687718590 }), 
+                      accessed: Ok(SystemTime { tv_sec: 1622516355, tv_nsec: 343733264 }), 
+                      created: Ok(SystemTime { tv_sec: 1622516350, tv_nsec: 404487658 }) } */
+    println!(&quot;All metadata: {:?}&quot;, file_metadata);
+    
+    Ok(())
+}
+</code></pre>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="107---reading-directory-contents"><a class="header" href="#107---reading-directory-contents">10.7   Reading Directory Contents</a></h1>
+<p>In this section, we examine how to read directory contents with the <a href="https://doc.rust-lang.org/std/fs/fn.read_dir.html"><code>read_dir</code></a> function. Reading directory contents is very similar to reading regular files. </p>
+<h2 id="1071---the-read_dir-function"><a class="header" href="#1071---the-read_dir-function">10.7.1   The Read_Dir Function</a></h2>
+<p>The <code>read_dir</code> function is defined as follows: </p>
+<pre><code class="language-rust ignore">pub fn read_dir&lt;P: AsRef&lt;Path&gt;&gt;(path: P) -&gt; Result&lt;ReadDir&gt;
+</code></pre>
+<p>If the operation is successful, then <code>Ok(ReadDir)</code> is returned. Otherwise, an <code>Err</code> value is returned. Errors can occur for many reasons, but these are some common ones:</p>
+<ul>
+<li>The provided path doesn’t exist.</li>
+<li>The process lacks the adequate permissions to view the contents.</li>
+<li>The path points refers to a non-directory file.</li>
+</ul>
+<h2 id="1072---the-readdir-struct"><a class="header" href="#1072---the-readdir-struct">10.7.2   The ReadDir Struct</a></h2>
+<p><a href="https://doc.rust-lang.org/std/fs/struct.ReadDir.html"><code>ReadDir</code></a> is an iterator over the entries in a directory.</p>
+<blockquote>
+<p><strong>New to Rust?</strong> An Iterator is a type that implements the <a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html"><code>Iterator</code></a> trait. You can use iterators to easily iterate over collections, such as arrays, vectors, and hashmaps.</p>
+</blockquote>
+<p>The following example shows how to use the <code>read_dir</code> function and the <code>ReadDir</code> struct to iterate over the entries in a directory, <code>example_directory</code>. Assume that <code>example_directory</code> includes three files: <code>file1.txt</code>, <code>file2,txt</code>, and <code>file3.txt</code>.</p>
+<pre><code class="language-rust ignore">use std::io;
+use std::fs::{self, DirEntry, read_dir};
+use std::path::Path;
+
+fn main() -&gt; io::Result&lt;()&gt; {
+    create_dir()
+    if let Ok(dir_iter) = read_dir(&quot;example_directory&quot;) {
+        for dir_entry in dir_iter {
+            if let Ok(dir_entry) = dir_entry {
+                println!(&quot;{:?}&quot;, dir_entry.file_name());
+            }
+        }
+    }
+    Ok(())
+}
+</code></pre>
+<p>Running the program produces the output: </p>
+<pre><code>cargo run
+   Compiling section_7 v0.1.0 (/Users/stephaniediao/Desktop/rust/chapter_10_code/src/section_7)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.70s
+     Running `/Users/stephaniediao/Desktop/rust/chapter_10_code/src/section_7/target/debug/section_7`
+&quot;file2.txt&quot;
+&quot;file3.txt&quot;
+&quot;file1.txt&quot;
+</code></pre>
+<p>You may notice that the files are not printed in order. This is because the order in which <code>read_dir</code> returns entries is not guaranteed. You can order the entries by sorting them as follows: </p>
+<pre><code class="language-rust ignore">use std::io;
+use std::fs::read_dir;
+
+fn main() -&gt; io::Result&lt;()&gt; {
+    let mut dir_entries = read_dir(&quot;example_directory&quot;)?
+        .map(|res| res.map(|e| e.path()))
+        .collect::&lt;Result&lt;Vec&lt;_&gt;, io::Error&gt;&gt;()?;
+    dir_entries.sort();
+    for entry in dir_entries {
+        println!(&quot;{:?}&quot;, entry.file_name().unwrap());
+    }
+    
+    Ok(())
+}
+</code></pre>
+<p>Running the program produces the output showing the sorted entries:</p>
+<pre><code>cargo run
+   Compiling section_7 v0.1.0 (/Users/stephaniediao/Desktop/rust/chapter_10_code/src/section_7)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.96s
+     Running `/Users/stephaniediao/Desktop/rust/chapter_10_code/src/section_7/target/debug/section_7`
+&quot;file1.txt&quot;
+&quot;file2.txt&quot;
+&quot;file3.txt&quot;
+</code></pre>
+<p>Run this code to see what entries are in the current directory!</p>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+use std::fs::read_dir;
+
+fn main() -&gt; io::Result&lt;()&gt; {
+    if let Ok(dir_iter) = read_dir(&quot;.&quot;) {
+        for dir_entry in dir_iter {
+            if let Ok(dir_entry) = dir_entry {
+                println!(&quot;{:?}&quot;, dir_entry.file_name());
+            }
+        }
+    }
+
+    Ok(())
+}
+</code></pre></pre>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="chapter-11-network-programming"><a class="header" href="#chapter-11-network-programming">Chapter 11: Network Programming</a></h1>
+<h2 id="the-client-server-programming-model"><a class="header" href="#the-client-server-programming-model">The Client-Server Programming Model</a></h2>
+<h2 id="networks"><a class="header" href="#networks">Networks</a></h2>
+<h2 id="the-global-ip-internet"><a class="header" href="#the-global-ip-internet">The Global IP Internet</a></h2>
+<h3 id="ip-addresses"><a class="header" href="#ip-addresses">IP Addresses</a></h3>
+<p>An IP address is an unsigned 32-bit integer. Rust defines the <em>IP address</em> struct shown below for network programs to store IP addresses. Storing IP addresses in a structure like this allows for us to more easily break the address into parts, manipulate it, and perform conversions on it.</p>
+<pre><code class="language-rust ignore">pub struct Ipv4Addr {
+    inner: c::in_addr,
+}
+
+impl Ipv4Addr {
+    pub const fn new(a: u8, b: u8, c: u8, d: u8) -&gt; Ipv4Addr {
+        // `s_addr` is stored as BE on all machine and the array is in BE order.
+        // So the native endian conversion method is used so that it's never swapped.
+        Ipv4Addr { inner: c::in_addr { s_addr: u32::from_ne_bytes([a, b, c, d]) } }
+    }
+
+    pub const fn octets(&amp;self) -&gt; [u8; 4] {
+        // This returns the order we want because s_addr is stored in big-endian.
+        self.inner.s_addr.to_ne_bytes()
+    }
+}
+</code></pre>
+<p>To ensure that IP addresses are usable consistently across both big-endian and little-endian systems, TCP/IP standardized that the encoding for IP addresses (and indeed, all network traffic) should be <em>big-endian</em>. This is also called <em>network byte order</em>. To enforce this invariant in our Rust code, the implementation of the IP address struct uses a rather obscure function: <code>u32::from_ne_bytes</code>. This function creates a 32-bit integer from a series of one-byte integers (<code>u8</code>). To do so, it assumes that the series of bytes that are passed to it are already in the proper increasing order based on the system's endianness: on a bit-endian system it assumes that the first byte passed is the most significant byte, and on a little-endian system it assumes that the first byte passed is the least significant byte. This ensures that when the final address is placed into memory, it will always be stored in big-endian representation if the bytes are passed in the order that humans typically read an IP address. If we want to get the bytes back in the correct network byte order, we can use the <code>#octets</code> method on the IP address struct.</p>
+<h3 id="internet-domain-names"><a class="header" href="#internet-domain-names">Internet Domain Names</a></h3>
+<h2 id="the-sockets-interface"><a class="header" href="#the-sockets-interface">The Sockets Interface</a></h2>
+<p>The sockets interface is a set of functions that are used in conjunction with the Unix I/O functions to build network applications. It has been implemented on most modern systems, including all Unix variants as well as Windows and Macintosh systems. Below is an overview of the sockets interface in the context of a typical client-server transaction. Rust provides abstractions over top of the low-level sockets interface to make it even easier to set up network programming. Instead of going through each of the sockets interface functions individually, we will go through the main functions used in Rust to create and use sockets and explain which functions of the sockets interface are used under-the-hood.
+<img src="chapter_11/../chapter_11/image1.png" alt="image" /></p>
+<h3 id="socket-address-structures"><a class="header" href="#socket-address-structures">Socket Address Structures</a></h3>
+<p>From the perspective of the Linux kernel, a socket is an endpoint for communication. From the perspective of a Linux program, a socket is an open file with a corresponding descriptor.</p>
+<p>Internet socket addresses are stored in Rust in the <code>SocketAddrV4</code> struct. Internally, this struct stores the C representation of a socket address, called a <code>sockaddr_in</code>. The details of this C struct can be found below.</p>
+<pre><code class="language-rust ignore">/* IP socket address structure */
+struct sockaddr_in {
+    uint16_t        sin_family;     /* Protocol family (aslways AF_INET) */
+    uint16_t        sin_port;       /* Port number in network byte order */
+    struct in_addr  sin_addr;       /* IP address in network byte order */
+    unsigned char   sin_zero[8];    /* Pad to sizeof(struct sockaddr) */
+};
+
+/* Generic socket address structure (for connect, bind, and accept) */
+struct sockaddr {
+    uint16_t    sa_family;      /* Protocol family */
+    char        sa_data[14];    /* Address data */
+};
+</code></pre>
+<p>A socket address includes at least a <strong>family</strong> (always <code>AF_INET</code> for IP addresses), an <strong>address</strong> (a 32-bit IP address), and a <strong>port</strong>. Most of the time, you won't create the <code>SocketAddrV4</code> directly. Rust provides a trait called <code>ToSocketAddrs</code> that allow other, more common values (such as <code>&amp;str</code>) to be converted to <code>SocketAddrV4</code>. For the content in this book, we will use <code>&amp;str</code>s to represent our addresses and ports in a common and readable format used in networking.</p>
+<h3 id="the-tcplistener-struct"><a class="header" href="#the-tcplistener-struct">The <code>TcpListener</code> Struct</a></h3>
+<p>One of the most common ways to implement network programming in Rust is via paired objects known as <code>TcpStreams</code> and <code>TcpListeners</code>. The latter of these two acts as a server: it <em>listens</em> for incoming connections and allows them to be accepted in turn. Naturally, this kind of socket is called a listening socket, and the <code>TcpListener</code> uses some internal calls to the operating system that involve the <code>listen</code> function from the socket interface specification to indicate that this socket should stay passively open in the background, prepared to accept an incoming request.</p>
+<h3 id="starting-the-server"><a class="header" href="#starting-the-server">Starting the Server</a></h3>
+<p>Before we can address the specifics of making and accepting network connections in Rust, we'll provide some sample code that we can reference in the next few sections.</p>
+<pre><code class="language-rust ignore">use std::net::TcpListener;
+use std::io::{Read, Write, BufReader, BufRead};
+
+pub fn make_socket() {
+    let server = TcpListener::bind(&quot;127.0.0.1:8080&quot;).unwrap_or_else(|_| {
+        panic!(&quot;Couldn't bind to port&quot;);
+    });
+
+    for connection in server.incoming() {
+        println!(&quot;New connection!&quot;);
+
+        let mut connection = match connection {
+            Err(_) =&gt; {
+                println!(&quot;Couldn't connect to client.&quot;);
+                continue;
+            },
+            _ =&gt; connection.unwrap()
+        };
+
+        let mut string = String::new();
+        let mut reader = BufReader::new(&amp;connection);
+        if let Err(_) = reader.read_line(&amp;mut string) {
+            println!(&quot;Unable to read from connection.&quot;);
+            continue;
+        }
+
+        println!(&quot;From client: {}&quot;, string);
+
+        let response = &quot;Hello!&quot;;
+        if let Err(_) = connection.write_all(response.as_bytes()) {
+            println!(&quot;Unable to write to connection.&quot;);
+            continue;
+        }
+
+        println!(&quot;Connection closed.&quot;);
+    }
+}
+</code></pre>
+<p>The code above will create a new listening socket, allow connections to it, read one line of data (ending in <code>'\n'</code>) from the client, and then respond with the word <code>&quot;Hello!&quot;</code>.</p>
+<p>Creating a new <code>TcpListener</code> and opening it to allow inbound connections can be done in one step in Rust, seen on line 5 of the example code above. There is a lot of heavy-lifting going on in this one line, so we'll go into more depth on what's actually happening there.</p>
+<p>On that line, we call <code>TcpListener::bind</code> and pass it something that Rust knows how to interpret as a socket address. In this case, the common internet format of separating an IPv4 address and a TCP port with a colon is used. The address chosen, <code>127.0.0.1</code>, is a good choice since it works on any machine and only allows connections in from the same machine, which makes it very safe to use.</p>
+<p>Internally, calling bind with this argument does the following:</p>
+<ol>
+<li>Splits the argument that it was given (<code>127.0.0.1:8080</code>) into a port and an address. If the IP address given is a <em>domain name</em> instead of an IP address (such as <code>www.example.com</code>),</li>
+<li>Creates a new socket on the system via the <code>socket</code> method. It also specifies the type of address we are using (internally, <code>AF_INET</code> or 32-bit IPv4 addresses) and the type of connection to be  made (<code>SOCK_STREAM</code>, which corresponds to the TCP protocol).</li>
+<li>Asks the system to <code>bind</code> this new socket to the address and port that we decoded in step 1.</li>
+<li>Tells the system that we are now accepting new connections by calling the <code>listen</code> method.</li>
+</ol>
+<p>There is a lot of abstraction in this one function call! Each of these steps would have had to be taken separately in C. Now, we get to the interesting part: accepting new connections.
+<br></p>
+<p><span style="border: 1px solid #008bb2;
+             border-radius: 5px;
+             background-color: #60dcff;
+             display: block;
+             padding: 15px;
+             color: #000833;">
+<strong>Aside</strong>   127.0.0.1 <br>
+The Internet has many organizations that govern it, and the one that deals specifically with the way that IP addresses are assigned and allocated is called <strong>IANA</strong>, or the <strong>Internet Assigned Numbers Authority</strong>. IANA has divided up the IPv4 address space into many different blocks, each of which has specific uses. Addresses of the form <code>10.x.x.x</code>, <code>172.y.x.x</code> (where <code>y</code> is between 16 and 31, inclusive), or <code>192.168.x.x</code>, for example, aren't routable on the public internet — they are for private use only. One of the better-known special blocks of IP addresses is the set of all addresses of the from <code>127.x.x.x</code>, specifically <code>127.0.0.1</code> with the alias &quot;<code>localhost</code>&quot;. On nearly every networked machine, this address is configured to route back to the machine itself. This is of great use to developers who are running code that runs over a network on their own computers, since accessing this code doesn't require that they know their IP address on the network (nor that they be on a network at all). They can reach their own machine by simply connecting to <code>127.0.0.1</code> or <code>localhost</code>.
+</span></p>
+<h3 id="accepting-connections"><a class="header" href="#accepting-connections">Accepting Connections</a></h3>
+<p>Now that we have converted our address and port into a form that the system can understand, created a new socket, bound it to the port and address that we wanted, and marked it as acceptign new connections, we have to actually process requests that come in. In the sample code, this occurs in the for loop beginning on line 9:</p>
+<pre><code class="language-rust ignore">    for connection in server.incoming() {
+        println!(&quot;New connection!&quot;);
+
+        let mut connection = match connection {
+            Err(_) =&gt; {
+                println!(&quot;Couldn't connect to client.&quot;);
+                continue;
+            },
+            _ =&gt; connection.unwrap()
+        };
+
+        let mut string = String::new();
+        let mut reader = BufReader::new(&amp;connection);
+        if let Err(_) = reader.read_line(&amp;mut string) {
+            println!(&quot;Unable to read from connection.&quot;);
+            continue;
+        }
+
+        println!(&quot;From client: {}&quot;, string);
+
+        let response = &quot;Hello!&quot;;
+        if let Err(_) = connection.write_all(response.as_bytes()) {
+            println!(&quot;Unable to write to connection.&quot;);
+            continue;
+        }
+
+        println!(&quot;Connection closed.&quot;);
+    }
+</code></pre>
+<p>Iterating over <code>server.incoming()</code> is fundamentally the same as repeatedly calling <code>server.accept()</code>, which internally calls the accept function on the socket interface. A nearly equivalent way of writing this loop is as follows:</p>
+<pre><code class="language-rust ignore">loop {
+    let connection = server.accept();
+
+    // loop body
+}
+</code></pre>
+<p>In either case, this function call blocks the program from continuing to work until a new connection is available. At this point, there are two different sockets that our program is dealing with: the socket attached to the newly-connected client, and the listener, which remains available for new connections.</p>
+<p>Once we have our new connection, the iterator will yield a <code>TcpStream</code>.</p>
+<p><span style="border: 1px solid #008bb2;
+             border-radius: 5px;
+             background-color: #60dcff;
+             display: block;
+             padding: 15px;
+             color: #000833;">
+<strong>Aside</strong>   <code>incoming()</code> versus <code>accept()</code>
+When we accept an incoming connection by using <code>TcpListener#accept</code>, we are actually returned a tuple of two values: the new <code>TcpStream</code> itself and the <code>SocketAddress</code> identifying the client. When we iterate over incoming connections using <code>TcpListener#incoming</code>, we only get the client <code>TcpStream</code>. Often, when we are handling an incoming connection, where the connection came from is not important, so it's not necessary to have the <code>SocketAddr</code> of the client. In other situations, especially where security is a concern, this is a very important piece of information, and <code>TcpListener#accept</code> should be used over <code>TcpListener#incoming</code>.
+</span></p>
+<h3 id="connecting-to-a-listener"><a class="header" href="#connecting-to-a-listener">Connecting to a Listener</a></h3>
+<p>Now that we know how to set up a listener of our own, it's time to explore the other side of the process: creating a client that could connect to our listener. Thankfully, this process is even simpler than creating the listener. Some example code that we will reference is below:</p>
+<pre><code class="language-rust ignore">use std::net::TcpStream;
+use std::io::{Write, Read};
+
+pub fn make_connection() {
+    let mut connection = match TcpStream::connect(&quot;127.0.0.1:8080&quot;) {
+        Err(_) =&gt; {
+            println!(&quot;Couldn't connect to server.&quot;);
+            return;
+        },
+        Ok(connection) =&gt; connection
+    };
+
+    let to_send = &quot;Here's a line of data!\n&quot;;
+    if let Err(_) = connection.write_all(to_send.as_bytes()) {
+        println!(&quot;Unable to write to connection.&quot;);
+        return;
+    }
+
+    let mut received: Vec&lt;u8&gt; = vec![];
+    if let Err(_) = connection.read_to_end(&amp;mut received) {
+        println!(&quot;Unable to read from connection.&quot;);
+        return;
+    }
+
+    let mut received_string = match String::from_utf8(received) {
+        Err(_) =&gt; {
+            println!(&quot;Server sent non-UTF8 response.&quot;);
+            return;
+        },
+        Ok(str) =&gt; str
+    };
+
+    println!(&quot;From server: {}&quot;, received_string);
+}
+</code></pre>
+<p>To connect to a listener that already exists, we use the <code>TcpStream::connect</code> method found on line 5 of the code above. As one might expect, this calls the corresponding socket interface <code>connect</code> method to solidify that this socket is a client socket, and to cause the operating system to finalize making a connection to the requested destination.</p>
+<h2 id="putting-it-together-the-span-stylefont-variant-small-capstinyspan-web-server"><a class="header" href="#putting-it-together-the-span-stylefont-variant-small-capstinyspan-web-server">Putting It Together: The <span style="font-variant: small-caps;">Tiny</span> Web Server</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="chapter-12-concurrent-programming"><a class="header" href="#chapter-12-concurrent-programming">Chapter 12: Concurrent Programming</a></h1>
+<p>As we learned in Chapter 8, logical control flows are <strong>concurrent</strong> if they are </p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

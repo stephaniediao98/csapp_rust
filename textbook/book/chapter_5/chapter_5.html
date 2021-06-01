@@ -1,0 +1,495 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Optimizing Program Performance</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="../chapter_2/chapter_2.html"><strong aria-hidden="true">2.</strong> Representing and Manipulating Information</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Draft chapter</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="../chapter_5/chapter_5.html" class="active"><strong aria-hidden="true">5.</strong> Optimizing Program Performance</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Draft chapter</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="../chapter_8/chapter_8.html"><strong aria-hidden="true">8.</strong> Exceptional Control Flow</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Draft chapter</div></li><li class="chapter-item expanded "><a href="../chapter_10/chapter_10.html"><strong aria-hidden="true">10.</strong> System-Level I/O</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_10/section_1.html"><strong aria-hidden="true">10.1.</strong> Unix I/O</a></li><li class="chapter-item expanded "><a href="../chapter_10/section_2.html"><strong aria-hidden="true">10.2.</strong> Files</a></li><li class="chapter-item expanded "><a href="../chapter_10/section_3.html"><strong aria-hidden="true">10.3.</strong> Opening and Closing Files</a></li><li class="chapter-item expanded "><a href="../chapter_10/section_4.html"><strong aria-hidden="true">10.4.</strong> Reading and Writing Files</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.5.</strong> Robust Reading and Writing with the Rio Package</div></li><li class="chapter-item expanded "><a href="../chapter_10/section_6.html"><strong aria-hidden="true">10.6.</strong> Reading File Metadata</a></li><li class="chapter-item expanded "><a href="../chapter_10/section_7.html"><strong aria-hidden="true">10.7.</strong> Reading Directory Contents</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.8.</strong> Sharing Files</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.9.</strong> I/O Redirection</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.10.</strong> Standard I/O (Omitted)</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.11.</strong> Putting it Together: Which I/O Functions Should I Use?</div></li></ol></li><li class="chapter-item expanded "><a href="../chapter_11/chapter_11.html"><strong aria-hidden="true">11.</strong> Network Programming</a></li><li class="chapter-item expanded "><a href="../chapter_12/chapter_12.html"><strong aria-hidden="true">12.</strong> Concurrent Programming</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="chapter-5-optimizing-program-performance"><a class="header" href="#chapter-5-optimizing-program-performance">Chapter 5: Optimizing Program Performance</a></h1>
+<hr />
+<h3 id="51-capabilities-and-limitations-of-optimizing-compilers"><a class="header" href="#51-capabilities-and-limitations-of-optimizing-compilers">5.1 Capabilities and Limitations of Optimizing Compilers</a></h3>
+<p>...</p>
+<p>Compilers must be carefult to apply only <em>safe</em> optimizations to a program, meaning that the resulting program will have the exacts same behavior as would an unoptimized version for all possible cases the program may encounter, up to the limits of the guarantees by the rust language. Constraining the compiler to perform only safe optimizations eliminates possible sources of undesired run-time behavior, but it also means that the programmer must make more of an effort to write programs in a way that the compiler can then transform into efficient machine-level code. To appreciate the challenges of deciding which program transformations are safe or not, consider the following two procedures:</p>
+<pre><pre class="playground"><code class="language-rust no_run">fn twiddle1(xp: *mut i64, yp: *mut i64) {
+    unsafe {
+        *xp += *yp;
+        *xp += *yp;
+    }
+}
+
+fn twiddle2(xp: *mut i64, yp: *mut i64) {
+    unsafe {
+        *xp += 2* *yp;
+    }
+}
+<span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>At first glance, both procedures seem to have identical behavior. They both addd the value stored at the location designated by pointer yp to that designated by pointer xp. On the other hand, function witddle2 is more efficient. It requires only three memory references (read *xp, read *yp, write *xp), whereas twiddle1 requires six (two reads of *xp, two reads of *yp, and two writes of *xp). Hence, if the compiler is given procedure twiddle1 to compile, one might think it could generate more efficient code based on the computations performed by twiddle2.</p>
+<p>Consider, however, the case in which xp and yp are equal. Then function twiddle1 will perform the following computations:</p>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">fn twiddle1(xp: *mut i64, yp: *mut i64) {
+</span><span class="boring">   unsafe {
+</span>*xp += *yp;
+*xp += *yp;
+<span class="boring">  }
+</span><span class="boring">}
+</span><span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>The result will be that the value at xp will be increased by a factor of 4. On the other hand, function twiddle2 will perform the following computation.:</p>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">fn twiddle2(xp: *mut i64, yp: *mut i64) {
+</span><span class="boring">   unsafe {
+</span> *xp += 2* *yp;
+<span class="boring">  }
+</span><span class="boring">}
+</span><span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>The result will be that hte value at xp will be increased by a factor of 3. The compiler knows nothing about how twiddle1 will be called, and so it must assume that the arguments of xxp and yp can ve equal. It therefor cannot generagte code in the styple of twiddle2 as an optimized version of twiddle1.</p>
+<p>The case where two pointers may designate the same memory location is know as <em>memory aliasing</em>. In rust, memory aliasing is mostly considered unsafe since it allows multiple variables to own a place in memory. In performing only safe optimizations, the compiler must assume that different pointers may be aliased. As another example , for a program with pointer variables p and q, consider the following code sequence:</p>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">fn main() {
+</span>let x = 1000;
+let y = 3000;
+<span class="boring">let mut t1 = 0;
+</span><span class="boring">let q: *mut i32 = &amp;mut t1;
+</span><span class="boring">let p: *mut i32 = &amp;mut t1;
+</span><span class="boring">unsafe{
+</span>*q = y;   /* 3000 */
+*p = x;   /* 1000 */
+t1 = *q;  /* 1000 or 3000 */
+<span class="boring">};
+</span><span class="boring">}
+</span></code></pre></pre>
+<p>The value computed for t1 depends on whether or not pointers p and q are aliased --- if not, it will equal 3,000, but if so it will equal 1,000. This leads to one of the major <em>optimization blockers</em>, aspects of programs that can severly limit the opportunities for a compiler to generate optimized code. If a compiler cannot determin wheter or not two pointers may be aliased, it must assume that either case is possible, limiting the set of possible optimizations.</p>
+<p><code>Practice 5.1</code>
+The following problem illustrates the way memoyr aliasing can cause unexpectede program behavior. Consider the following procedure to swap two values:</p>
+<pre><pre class="playground"><code class="language-rust no_run">fn swap(xp: *mut i64, yp: *mut i64) {
+    unsafe {
+        *xp = *xp + *yp;
+        *yp = *xp - *yp;
+        *xp = *xp - *yp;
+    }
+}
+<span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>If this procedure is called with xp equal to yp, wat effect will it have?</p>
+<p>...</p>
+<p>A second optimization blocker is due to function calls. As an example, consider the following two procedures:</p>
+<pre><pre class="playground"><code class="language-rust no_run">fn f() -&gt; i64{ todo!() }
+fn func1() -&gt; i64 {
+    f() + f() + f() + f()
+}
+
+fn func2() -&gt; i64 {
+    4*f()
+}
+<span class="boring">fn main() {}
+</span></code></pre></pre>
+<p>It might seem at first that both compute the same result but with func2, calling f only once, whereas func1 calls it four times. It is tempting to generate code in the styple of func2 when given func1 as the source.</p>
+<p>Consider, however, the following code for f:</p>
+<pre><pre class="playground"><code class="language-rust no_run">static mut COUNTER: i32 = 0;
+<span class="boring">fn main() {
+</span>fn f() -&gt; i64 {
+<span class="boring">       unsafe {
+</span>	let count = COUNTER.into();
+	COUNTER += 1;
+	count.into()
+<span class="boring">       }
+</span>}
+<span class="boring">}
+</span></code></pre></pre>
+<p>This function has a <em>side effect</em> --- it modifies some part of of the global program state. Changing the number of times it gets called changes the program behavior. In particular, a call to func1 would return 0 + 1 + 2 + 3 = 6, whereas the call to func2 would return 4 * 0 = 0, assuming both started with global variable counter set to zero.</p>
+<p>Most compilers do not try to determine whether a function is free of side effects and hence is a candidate for optimizations such as those attempted in func2. Instead, the compiler assumes  the worse case and leaves function calls intact.</p>
+<hr />
+<h3 id="52-expressing-program-performance"><a class="header" href="#52-expressing-program-performance">5.2 Expressing Program Performance</a></h3>
+<p>...</p>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">fn main() {}
+</span>fn psum1(a: Vec&lt;f32&gt;, p: &amp;mut Vec&lt;f32&gt;, n: usize) {
+    p[0] = a[0];
+    for i in 1..n {
+        p[i] = p[i-1] + a[i];
+    }
+}
+
+fn psum2(a: Vec&lt;f32&gt;, p: &amp;mut Vec&lt;f32&gt;, n: usize) {
+    p[0] = a[0];
+    for i in (1..n-1).step_by(2) {
+        let mid_val: f32 = p[i-1] + a[i];
+        p[i] = mid_val;
+        p[i+1] = mid_val + a[i+1];
+    }
+    if n % 2 == 0 {
+        p[n-1] = p[n-2] + a[n-1];
+    }
+}
+</code></pre></pre>
+<p><code>Figure 5.1</code></p>
+<p>...</p>
+<hr />
+<h3 id="53-program-example"><a class="header" href="#53-program-example">5.3 Program Example</a></h3>
+<p>To demonstrate how an abstract program can be systematically transformed into more efficient code, we will use a running example bacsed on the vector data structure shown in figure 5.3. A vector is represneted with two blocks of memory: the header and the data array. The header is a structure declared as follows:</p>
+<p>The declaration uses longs (<code>i64</code>) as the default type of the elements.</p>
+<p>Figure 5.4 shows some baic procedures for generating vecotrs, accesing vecot elements, determining the length of a vector, and a few other things. An important feature to not is that <em>get_vec_element</em>, the vecotr access function, performs bounds checking for every vector reference . This code is similar to the array representations used in many other languages, including Java. Bounds checking reduces the chances of program error, but it can also slow down program execution.</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:1:58}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.4</p>
+<p>As an optimization example, consider the code shown in Figure 5.5, which combines all of the elements in a vector into a single value according to some operation.</p>
+<p>In our presentation, we will proceed through a series of transformations of the code, writing different versions of the combining function. </p>
+<p>...</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:61:68}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.5</p>
+<hr />
+<h3 id="54-eliminating-loop-inefficiencies"><a class="header" href="#54-eliminating-loop-inefficiencies">5.4 Eliminating Loop Inefficiencies</a></h3>
+<p>Observe that procedure <code>combine1</code>, as shown in Figure 5.5, calls function vec_length as teh test condition of the for loop. Recall from our discussion of how to translate code containing loops into machine-level programs (Section 3.6.7) that the test condition must be evaluated on every iteration of the loop. On the other hand, the length of the vector does not change as teh loop proceeds. We could therefore compute the vector length only one an duse this value inour test condition.</p>
+<p>Figure 5.6 shows a modified version called <code>combine2</code>. It calls vec_length at the beginning and assigns the result to a local variable length. This transformation has noticable effect on the overfall performance for some data types and operations, and minimal or even none for others. In any case, this transformations is required to eliminate inifficiencies that would become bottlenexks as we attempt further optimizations.</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:70:78}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.6</p>
+<p>...</p>
+<hr />
+<h3 id="55-reducing-procedure-calls"><a class="header" href="#55-reducing-procedure-calls">5.5 Reducing Procedure Calls</a></h3>
+<p>As we have seen, procedure calls can incur overhead and also block most forms of program optimization we can see in the code for combine2 (Figure 5.6) that get_vec_element is called on every loop iteration to retrieve the next vector element. This function checks the vector index <code>i</code> against the loop bounds with every vector reference, a clear source of inefficiency. Bounds checking might be a useful feature when dealing with arbitrary array accesses, but a simle analysis of the code for <code>combine2</code> shows that all references will be valid.</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:80:87}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.9</p>
+<p>Suppose instead that we use the fucntion get_vec_start (Figure 5.4) to our abstract data type. This function returns the starting address of the data array, as showin in Figure 5.9. We could then write the procedure shown as combine3 in this ficugrfe, having no function calls in the inner loop. Rather than making a function call to retrieve each vector element, it accessses the array directl. A purist might stay that this transformation seriously impairs the program modularity. In principle, the user of the vector abstract data type should not even need to know that the vector contents are stored as an array, rather than as some other data structure such as a linked list. A more pragmatic programmer would argue that this transformation is a necessary step towrad achieveing high-performance results.</p>
+<p>...</p>
+<hr />
+<h3 id="56-eliminating-unneeded-memory-references"><a class="header" href="#56-eliminating-unneeded-memory-references">5.6 Eliminating Unneeded Memory References</a></h3>
+<p>The code for <code>combine3</code> accumulates the value being computed by the combining operation at the location designated by the pointer <code>dest</code>. This attribute can be seen by examining the assembly code generated by the inner loop of the combiled code</p>
+<p>...</p>
+<p>We can eliminate this needless reading and writing of memory by rewriting the code in the style of <code>combine4</code> inf Figure 5.10. We introduce a temporary value acc that is sued in the loop to accumulate the computed values. The result is stored at dest only after the loop has been completed.</p>
+<p>...</p>
+<p>We see a signification improvement in the program performance, as will be seen in Section 5.10.</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:89:97}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.10</p>
+<p>...</p>
+<hr />
+<h3 id="57-understanding-modern-processors-unchanged"><a class="header" href="#57-understanding-modern-processors-unchanged">5.7 Understanding Modern Processors (unchanged)</a></h3>
+<hr />
+<h3 id="58-loop-unrolling"><a class="header" href="#58-loop-unrolling">5.8 Loop Unrolling</a></h3>
+<p>Loop unrolling is a program transformation that reduced the number of iterations for a loop by increasing the number of elements computed on each iteration. We saw an example of this with the function <code>psum2</code> (figure 5.1), where each iteration computes two elements of the prefix sum, thereby halving the total number of iterations required. Loop unrolling can improve performance in two ways. First, it reduces the numbr of operations that do not contribute directly to the program result, such as loop indexing and conditional branching. Second, it exposes ways in whiich we can further transform the code to reduce the number of operations in the critical paths of the overall computation. In this section, we will examine simple loop unrolling, without any further transformations.</p>
+<p>Figure 5.16 shows a version of our combining code using what we will refer to as &quot;2 x 1 loop unrolling.&quot; This frist loop steps through the array of two elements at a time. That is, the loop index <code>i</code> is incremented by 2 on each iteration, and the combining operation is applied to array elements <code>i</code> and <code>i + 1</code> in a single iteration.</p>
+<p>...</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:100:117}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.16</p>
+<p>...</p>
+<hr />
+<h3 id="59-enchancing-parallelism"><a class="header" href="#59-enchancing-parallelism">5.9 Enchancing Parallelism</a></h3>
+<p>...</p>
+<h4 id="591-multiple-accumulators"><a class="header" href="#591-multiple-accumulators">5.9.1 Multiple Accumulators</a></h4>
+<p>...</p>
+<p>Figure 5.21 shows code that uses this method. It uses both two-way loop unrolling, to combine more elements per iteration, and two-way parallelism, accumulating elements with even indices in verable acc0 and elements with odd indicies in veraible acc1. We therefore refer to this as &quot;2 x 2 loop unroling.&quot; Ass before, we include a second loop to accumulate any remaining array elements for the case where teh vector length is not a multiple of 2. We then appply combinding code opeation to acc0 and acc1 to compute the final result.</p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:120:140}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.21</p>
+<p>...</p>
+<h4 id="592"><a class="header" href="#592">5.9.2</a></h4>
+<p>We now explore another way to break the sequential dependencies and thereby improve performance beyond the latency bound. We saw that the <code>k x 1</code> loop unrolling of <code>combine5</code> did not change the set of operations performed in combining the vector elements to form their sum or producet. By a very small change in the code, however, we can fundamentally change the way the combining is performed, and also greatly increase the performance. </p>
+<p>Figure 5.26 shows a function <code>combine7</code> that differs from the unrolled code of <code>combine5</code> (Figure 5.16) only in the way the elements are combined in the inner loop. In <code>combine5</code>, the combining is performed by the statement</p>
+<p>{{#include ../code/main.rs:109}}</p>
+<p>while in <code>combine7</code>, it is performed by the statement</p>
+<p>{{#include ../code/main.rs:152}}</p>
+<p>differing only in how two parentheses are placed. We call this a reassociation transformation, because the parenthesess shif the oder in which the vector elements are combined with the accumulated value acc, yielding a form of loop unrolling we refer to as &quot;2 x 1a.&quot;</p>
+<p>... </p>
+<pre><pre class="playground"><code class="language-rust no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{{#include ../code/main.rs:143:161}}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Figure 5.26</p>
+<hr />
+<h3 id="510-summary-of-results-for-optimizing-combining-code-unchanged"><a class="header" href="#510-summary-of-results-for-optimizing-combining-code-unchanged">5.10 Summary of Results for Optimizing Combining Code (unchanged)</a></h3>
+<p>...</p>
+<h2 id="rust-results-summary"><a class="header" href="#rust-results-summary">Rust results summary</a></h2>
+<p>We'd expect the 7 combine functions to get faster and faster with the exception of <code>combine7</code> which we expect to have similar performance to <code>combine5</code>. As we will see, however, this isn't exactly the case. We ran 2 sets of benchmarks on all 7 functions. The first set ran without taking advantage of rust's optimizaitions while the second ran with opt-level = 3. Here, we will take a look at all of these and discuss possibilities as to why some of the results are inconsistent with what we might expect.</p>
+<p>Each benchmark creates a vector of size 10,000 where each element, <code>i</code> holds the value <code>i * i</code>. Then it calls one of the combine functions to determine the sum of the vector.</p>
+<h4 id="unoptimized"><a class="header" href="#unoptimized">Unoptimized:</a></h4>
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+<p>Here, two of the combine functions are not what would've been expected: <code>combine4</code> and <code>combine6</code>. We'd expect <code>combine4</code> to be faster than <code>combine3</code>, and we'd expect <code>combine6</code> to be the fastest function. The three main culprits of these discrepencies are the difference in languages, machine architecture, and compilers.</p>
+<p>These functions were originally written for optimizing C code, and rust being designed with a different purpose in mind, their compilation processes follow a different set of rules that allow for different binaries that GCC or another C compiler wouldn't give.</p>
+<p>For <code>combine6</code>, there's a chance the loop unrolling couldn've slown down execution because of different compilers or different architecture. These were originally run on an Intel Core i7 Haswell processor when benchmarked in C. With rust, they were run on an AMD Ryzen 7 processor. Including the reseach done suggesting that loop unrolling in AMD processors perform worse than on Intel processors, the cache size to data size ratio may also have played a factor.</p>
+<p>It is worth noting that rust does provide the attribute-like macro <code>unroll_for_loops</code> in the unroll crate to allow the rust compiler to handling the unrolling as it sees fit. Speedups when using this crate can match the optimized version of <code>combine4</code>.</p>
+<blockquote>
+<p>combine1          time:   [176.00 us <r>176.69 us</r> 177.53 us]<br />
+combine2          time:   [173.54 us <r>175.12 us</r> 176.90 us]<br />
+combine3          time:   [158.76 us <r>164.99 us</r> 170.80 us]<br />
+combine4          time:   [168.36 us <r>173.15 us</r> 178.22 us]<br />
+combine5          time:   [24.625 us <r>24.635 us</r> 24.647 us]<br />
+combine6          time:   [26.494 us <r>26.502 us</r> 26.511 us]<br />
+combine7          time:   [25.117 us <r>25.126 us</r> 25.137 us]</p>
+</blockquote>
+<h4 id="optimized"><a class="header" href="#optimized">Optimized:</a></h4>
+<p>Running the benchmarker with the optimizing function, the only odd function is <code>combine4</code> which is orders of magnitude faster than all of the other functions. This has to do with how rust compiles this code. For whatever reason, the rust compiler deemed it a good idea to take advantage of XMM registers which are a kind of 128 bit register that can be used to perform simultaneous operations on 2 longs. Looking at the difference between <code>combine3</code> and <code>combine4</code>, the change that most likely allowed this optimization to be able to take place is the lack of needing to dereference an accumulator before adding to it. Since accumulation is happening sequentially and within a local variable, rustc (the rust compiler), was smart enough to figure out that it could use these XMM registers.</p>
+<blockquote>
+<p>combine1                time:   [4.7249 us <r>4.7416 us</r> 4.7762 us]<br />
+combine2                time:   [4.7097 us <r>4.7107 us</r> 4.7119 us]<br />
+combine3                time:   [2.4628 us <r>2.4646 us</r> 2.4670 us]<br />
+combine4                time:   [663.91 ns <r>664.95 ns</r> 666.52 ns]<br />
+combine5                time:   [2.3855 us <r>2.3861 us</r> 2.3867 us]<br />
+combine6                time:   [1.6023 us <r>1.6033 us</r> 1.6047 us]<br />
+combine7                time:   [2.3611 us <r>2.3624 us</r> 2.3642 us]</p>
+</blockquote>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../chapter_2/chapter_2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../chapter_8/chapter_8.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../chapter_2/chapter_2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../chapter_8/chapter_8.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

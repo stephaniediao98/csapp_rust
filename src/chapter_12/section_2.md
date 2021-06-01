@@ -1,3 +1,1 @@
-# 12.2: &nbsp; Concurrent Programming with I/O Multiplexing
-
-TODO!
+# 12.2 &nbsp; Concurrent Programming with I/O Multiplexing
